@@ -2,13 +2,13 @@
 
 namespace App\Entity;
 
-use App\Repository\AdminRepository;
-use Doctrine\ORM\Mapping as ORM;
 
+use Doctrine\ORM\Mapping as ORM;
+use App\Repository\AdminRepository;
 #[ORM\Entity(repositoryClass: AdminRepository::class)]
-class Admin
+class Admin 
 {
-    #[ORM\Id]
+    #[ORM\Id]   
     #[ORM\GeneratedValue]
     #[ORM\Column(type: 'integer')]
     private $id;

@@ -29,6 +29,7 @@ class __TwigTemplate_c97c827f3322266d988c416ee3df3f77 extends Template
         $this->blocks = [
             'title' => [$this, 'block_title'],
             'body' => [$this, 'block_body'],
+            'footer' => [$this, 'block_footer'],
         ];
     }
 
@@ -56,11 +57,26 @@ class __TwigTemplate_c97c827f3322266d988c416ee3df3f77 extends Template
         echo "       
     </head>
     <body>
-        ";
-        // line 11
+       
+       <header>
+          <div>
+       </div>
+       </header>
+       <main>
+         <div>
+             ";
+        // line 18
         $this->displayBlock('body', $context, $blocks);
-        // line 21
-        echo "    </body>
+        // line 19
+        echo "         </div>
+       </main>
+        <footer>
+            ";
+        // line 22
+        $this->displayBlock('footer', $context, $blocks);
+        echo " 
+        </footer>
+    </body>
 </html>
 ";
         
@@ -90,7 +106,7 @@ class __TwigTemplate_c97c827f3322266d988c416ee3df3f77 extends Template
 
     }
 
-    // line 11
+    // line 18
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -100,26 +116,24 @@ class __TwigTemplate_c97c827f3322266d988c416ee3df3f77 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 12
-        echo "        ";
-        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 12, $this->source); })()), "user", [], "any", false, false, false, 12)) {
-            // line 13
-            echo "            <a class=\"item\" href=";
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
-            echo " >déconnexion</a>
-        ";
-        } else {
-            // line 15
-            echo "             <a href=";
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
-            echo " class=\"item\"  >connexion</a>
-              
-        ";
-        }
-        // line 18
-        echo "                
         
-        ";
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+        
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
+
+    }
+
+    // line 22
+    public function block_footer($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "footer"));
+
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "footer"));
+
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -135,7 +149,7 @@ class __TwigTemplate_c97c827f3322266d988c416ee3df3f77 extends Template
 
     public function getDebugInfo()
     {
-        return array (  120 => 18,  113 => 15,  107 => 13,  104 => 12,  94 => 11,  75 => 5,  63 => 21,  61 => 11,  56 => 8,  51 => 5,  45 => 1,);
+        return array (  128 => 22,  110 => 18,  91 => 5,  76 => 22,  71 => 19,  69 => 18,  57 => 8,  52 => 5,  46 => 1,);
     }
 
     public function getSourceContext()
@@ -150,16 +164,19 @@ class __TwigTemplate_c97c827f3322266d988c416ee3df3f77 extends Template
        
     </head>
     <body>
-        {% block body %}
-        {% if app.user %}
-            <a class=\"item\" href={{path(\"app_logout\")}} >déconnexion</a>
-        {% else %}
-             <a href={{path(\"app_login\")}} class=\"item\"  >connexion</a>
-              
-        {% endif %}
-                
-        
-        {% endblock %}
+       
+       <header>
+          <div>
+       </div>
+       </header>
+       <main>
+         <div>
+             {% block body %}{% endblock %}
+         </div>
+       </main>
+        <footer>
+            {% block footer %}{% endblock %} 
+        </footer>
     </body>
 </html>
 ", "base.html.twig", "C:\\wamp64\\www\\ProjetFormation\\project\\templates\\base.html.twig");

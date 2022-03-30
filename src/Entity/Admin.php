@@ -16,7 +16,7 @@ class Admin implements UserInterface, PasswordAuthenticatedUserInterface
     private $id;
 
     #[ORM\Column(type: 'string', length: 180, unique: true)]
-    private $mail;
+    private $email;
 
     #[ORM\Column(type: 'json')]
     private $roles = [];
@@ -29,14 +29,14 @@ class Admin implements UserInterface, PasswordAuthenticatedUserInterface
         return $this->id;
     }
 
-    public function getMail(): ?string
+    public function getEMail(): ?string
     {
-        return $this->mail;
+        return $this->email;
     }
 
-    public function setMail(string $mail): self
+    public function setEMail(string $email): self
     {
-        $this->mail = $mail;
+        $this->email = $email;
 
         return $this;
     }

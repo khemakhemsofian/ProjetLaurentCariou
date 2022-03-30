@@ -21,7 +21,7 @@ class AdminCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [    
-            EmailField::new('mail'),
+            EmailField::new('email'),
             ChoiceField::new('roles')->setChoices([
                 'ROLE_ADMIN'=>'ROLE_ADMIN',  
            ])->allowMultipleChoices(),

@@ -26,7 +26,7 @@ class TranslatorConfig
     private $providers;
     
     /**
-     * @default false
+     * @default true
      * @param ParamConfigurator|bool $value
      * @return $this
      */

@@ -11,6 +11,12 @@
        
        <header>
           <div>
+        {% if app.user %}
+            <a class="item" href={{path("app_logout")}} >déconnexion</a>
+            <a class="item" href={{path("admin")}} >Ajouter du contenu</a>
+        {% else %}
+                <a href={{path("app_login")}} class="item"  >connexion</a>
+        {% endif %}
        </div>
        </header>
        <main>

@@ -52,30 +52,101 @@ class __TwigTemplate_c97c827f3322266d988c416ee3df3f77 extends Template
         $this->displayBlock('title', $context, $blocks);
         echo "</title>
         <link rel=\"icon\" href=\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>\">
+        <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3\" crossorigin=\"anonymous\">
         ";
-        // line 8
+        // line 9
         echo "       
     </head>
     <body>
        
        <header>
           <div>
+<nav class=\"navbar navbar-expand-lg navbar-light bg-light\">
+  <div class=\"container-fluid\">
+    <a class=\"navbar-brand\" href=\"#\">Navbar</a>
+    <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarNavDropdown\" aria-controls=\"navbarNavDropdown\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
+      <span class=\"navbar-toggler-icon\"></span>
+    </button>
+    <div class=\"collapse navbar-collapse\" id=\"navbarNavDropdown\">
+      <ul class=\"navbar-nav\">
+        <li class=\"nav-item\">
+          <a class=\"nav-link\" href=";
+        // line 24
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_about");
+        echo ">About Me</a>
+        </li>
+         <li class=\"nav-item dropdown\">
+          <a class=\"nav-link dropdown-toggle\" href= ";
+        // line 27
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_design");
+        echo " id=\"navbarDropdownMenuLink\" role=\"button\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\">
+             Design
+          </a>
+          <ul class=\"dropdown-menu\" aria-labelledby=\"navbarDropdownMenuLink\">
+            <li><a class=\"dropdown-item\" href=";
+        // line 31
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_design");
+        echo ">Tous les design</a></li>
+           ";
+        // line 32
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["DesignList"]) || array_key_exists("DesignList", $context) ? $context["DesignList"] : (function () { throw new RuntimeError('Variable "DesignList" does not exist.', 32, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["Design"]) {
+            // line 33
+            echo "                <li><a class=\"dropdown-item\">";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["Design"], "designName", [], "any", false, false, false, 33), "html", null, true);
+            echo "</a></li>
+            ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['Design'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 35
+        echo "          </ul>
+        </li>
+        <li class=\"nav-item dropdown\">
+          <a class=\"nav-link dropdown-toggle\" href=";
+        // line 38
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_graphism");
+        echo " id=\"navbarDropdownMenuLink\" role=\"button\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\">
+            Graphism
+          </a>
+          <ul class=\"dropdown-menu\" aria-labelledby=\"navbarDropdownMenuLink\">
+            <li><a class=\"dropdown-item\" href=";
+        // line 42
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_graphism");
+        echo ">Tous les graphism</a></li>
+            <li><a class=\"dropdown-item\" href=\"#\">Another action</a></li>
+            <li><a class=\"dropdown-item\" href=\"#\">Something else here</a></li>
+          </ul>
+        </li>
+         <li class=\"nav-item\">
+          <a class=\"nav-link\" href=";
+        // line 48
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_contact");
+        echo ">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
        </div>
        </header>
        <main>
          <div>
              ";
-        // line 18
+        // line 58
         $this->displayBlock('body', $context, $blocks);
-        // line 19
+        // line 59
         echo "         </div>
        </main>
         <footer>
             ";
-        // line 22
+        // line 62
         $this->displayBlock('footer', $context, $blocks);
         echo " 
         </footer>
+        <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p\" crossorigin=\"anonymous\"></script>
     </body>
 </html>
 ";
@@ -106,7 +177,7 @@ class __TwigTemplate_c97c827f3322266d988c416ee3df3f77 extends Template
 
     }
 
-    // line 18
+    // line 58
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -124,7 +195,7 @@ class __TwigTemplate_c97c827f3322266d988c416ee3df3f77 extends Template
 
     }
 
-    // line 22
+    // line 62
     public function block_footer($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -147,9 +218,14 @@ class __TwigTemplate_c97c827f3322266d988c416ee3df3f77 extends Template
         return "base.html.twig";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  128 => 22,  110 => 18,  91 => 5,  76 => 22,  71 => 19,  69 => 18,  57 => 8,  52 => 5,  46 => 1,);
+        return array (  199 => 62,  181 => 58,  162 => 5,  146 => 62,  141 => 59,  139 => 58,  126 => 48,  117 => 42,  110 => 38,  105 => 35,  96 => 33,  92 => 32,  88 => 31,  81 => 27,  75 => 24,  58 => 9,  52 => 5,  46 => 1,);
     }
 
     public function getSourceContext()
@@ -160,6 +236,7 @@ class __TwigTemplate_c97c827f3322266d988c416ee3df3f77 extends Template
         <meta charset=\"UTF-8\">
         <title>{% block title %}Welcome!{% endblock %}</title>
         <link rel=\"icon\" href=\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>\">
+        <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3\" crossorigin=\"anonymous\">
         {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
        
     </head>
@@ -167,6 +244,45 @@ class __TwigTemplate_c97c827f3322266d988c416ee3df3f77 extends Template
        
        <header>
           <div>
+<nav class=\"navbar navbar-expand-lg navbar-light bg-light\">
+  <div class=\"container-fluid\">
+    <a class=\"navbar-brand\" href=\"#\">Navbar</a>
+    <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarNavDropdown\" aria-controls=\"navbarNavDropdown\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
+      <span class=\"navbar-toggler-icon\"></span>
+    </button>
+    <div class=\"collapse navbar-collapse\" id=\"navbarNavDropdown\">
+      <ul class=\"navbar-nav\">
+        <li class=\"nav-item\">
+          <a class=\"nav-link\" href={{path(\"app_about\")}}>About Me</a>
+        </li>
+         <li class=\"nav-item dropdown\">
+          <a class=\"nav-link dropdown-toggle\" href= {{path(\"app_design\")}} id=\"navbarDropdownMenuLink\" role=\"button\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\">
+             Design
+          </a>
+          <ul class=\"dropdown-menu\" aria-labelledby=\"navbarDropdownMenuLink\">
+            <li><a class=\"dropdown-item\" href={{path(\"app_design\")}}>Tous les design</a></li>
+           {% for Design in DesignList %}
+                <li><a class=\"dropdown-item\">{{Design.designName}}</a></li>
+            {% endfor %}
+          </ul>
+        </li>
+        <li class=\"nav-item dropdown\">
+          <a class=\"nav-link dropdown-toggle\" href={{path(\"app_graphism\")}} id=\"navbarDropdownMenuLink\" role=\"button\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\">
+            Graphism
+          </a>
+          <ul class=\"dropdown-menu\" aria-labelledby=\"navbarDropdownMenuLink\">
+            <li><a class=\"dropdown-item\" href={{path(\"app_graphism\")}}>Tous les graphism</a></li>
+            <li><a class=\"dropdown-item\" href=\"#\">Another action</a></li>
+            <li><a class=\"dropdown-item\" href=\"#\">Something else here</a></li>
+          </ul>
+        </li>
+         <li class=\"nav-item\">
+          <a class=\"nav-link\" href={{path(\"app_contact\")}}>Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
        </div>
        </header>
        <main>
@@ -177,6 +293,7 @@ class __TwigTemplate_c97c827f3322266d988c416ee3df3f77 extends Template
         <footer>
             {% block footer %}{% endblock %} 
         </footer>
+        <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p\" crossorigin=\"anonymous\"></script>
     </body>
 </html>
 ", "base.html.twig", "C:\\wamp64\\www\\ProjetFormation\\project\\templates\\base.html.twig");

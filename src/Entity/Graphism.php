@@ -15,26 +15,13 @@ class Graphism
     #[ORM\Column(type: 'integer')]
     private $id;
 
-    #[ORM\Column(type: 'string', length: 50)]
-    private $stiker;
-
-    #[ORM\Column(type: 'string', length: 50)]
-    private $motion;
-
-    #[ORM\Column(type: 'string', length: 50)]
-    private $overlay;
-
-    #[ORM\Column(type: 'string', length: 50)]
-    private $logo;
-
-    #[ORM\Column(type: 'string', length: 50)]
-    private $banner;
-
-    #[ORM\Column(type: 'string', length: 50)]
-    private $custom_clothe;
+    #[ORM\Column(type: 'string', length: 100)]
+    private $graphismName;
 
     #[ORM\OneToMany(mappedBy: 'graphism', targetEntity: Annonce::class)]
     private $annonces;
+
+ 
 
     public function __construct()
     {
@@ -46,74 +33,14 @@ class Graphism
         return $this->id;
     }
 
-    public function getStiker(): ?string
+    public function getGraphismName(): ?string
     {
-        return $this->stiker;
+        return $this->graphismName;
     }
 
-    public function setStiker(string $stiker): self
+    public function setGraphismName(string $graphismName): self
     {
-        $this->stiker = $stiker;
-
-        return $this;
-    }
-
-    public function getMotion(): ?string
-    {
-        return $this->motion;
-    }
-
-    public function setMotion(string $motion): self
-    {
-        $this->motion = $motion;
-
-        return $this;
-    }
-
-    public function getOverlay(): ?string
-    {
-        return $this->overlay;
-    }
-
-    public function setOverlay(string $overlay): self
-    {
-        $this->overlay = $overlay;
-
-        return $this;
-    }
-
-    public function getLogo(): ?string
-    {
-        return $this->logo;
-    }
-
-    public function setLogo(string $logo): self
-    {
-        $this->logo = $logo;
-
-        return $this;
-    }
-
-    public function getBanner(): ?string
-    {
-        return $this->banner;
-    }
-
-    public function setBanner(string $banner): self
-    {
-        $this->banner = $banner;
-
-        return $this;
-    }
-
-    public function getCustomClothe(): ?string
-    {
-        return $this->custom_clothe;
-    }
-
-    public function setCustomClothe(string $custom_clothe): self
-    {
-        $this->custom_clothe = $custom_clothe;
+        $this->graphismName = $graphismName;
 
         return $this;
     }
@@ -147,4 +74,6 @@ class Graphism
 
         return $this;
     }
+
+   
 }

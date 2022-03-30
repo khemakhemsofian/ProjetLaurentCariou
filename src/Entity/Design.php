@@ -15,17 +15,14 @@ class Design
     #[ORM\Column(type: 'integer')]
     private $id;
 
-    #[ORM\Column(type: 'string', length: 50)]
-    private $meca;
+    #[ORM\Column(type: 'string', length: 100)]
+    private $designName;
 
-    #[ORM\Column(type: 'string', length: 50)]
-    private $car;
-
-    #[ORM\Column(type: 'string', length: 50)]
-    private $guns;
 
     #[ORM\OneToMany(mappedBy: 'design', targetEntity: Annonce::class)]
     private $annonces;
+
+
 
     public function __construct()
     {
@@ -37,42 +34,18 @@ class Design
         return $this->id;
     }
 
-    public function getMeca(): ?string
+    public function getDesignName(): ?string
     {
-        return $this->meca;
+        return $this->designName;
     }
 
-    public function setMeca(string $meca): self
+    public function setDesignName(string $designName): self
     {
-        $this->meca = $meca;
+        $this->designName = $designName;
 
         return $this;
     }
-
-    public function getCar(): ?string
-    {
-        return $this->car;
-    }
-
-    public function setCar(string $car): self
-    {
-        $this->car = $car;
-
-        return $this;
-    }
-
-    public function getGuns(): ?string
-    {
-        return $this->guns;
-    }
-
-    public function setGuns(string $guns): self
-    {
-        $this->guns = $guns;
-
-        return $this;
-    }
-
+    
     /**
      * @return Collection<int, Annonce>
      */
@@ -102,4 +75,6 @@ class Design
 
         return $this;
     }
+
+   
 }

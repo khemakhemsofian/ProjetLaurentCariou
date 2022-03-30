@@ -80,7 +80,7 @@ class __TwigTemplate_da5e4714ffc8349eb94e6053553d9bd3 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@EasyAdmin/layout.html.twig"));
 
         // line 2
-        $context["__internal_911887f12dd68b836776c296c8650d3d8287314d6eba510ea8cf6c5f492f2fbc"] = twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["ea"]) || array_key_exists("ea", $context) ? $context["ea"] : (function () { throw new RuntimeError('Variable "ea" does not exist.', 2, $this->source); })()), "i18n", [], "any", false, false, false, 2), "translationDomain", [], "any", false, false, false, 2);
+        $context["__internal_3d03418b92fbe3ee30981cb606169d43d83278bded84014349fde1177303113c"] = twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["ea"]) || array_key_exists("ea", $context) ? $context["ea"] : (function () { throw new RuntimeError('Variable "ea" does not exist.', 2, $this->source); })()), "i18n", [], "any", false, false, false, 2), "translationDomain", [], "any", false, false, false, 2);
         // line 3
         echo "
 <!DOCTYPE html>
@@ -217,7 +217,7 @@ class __TwigTemplate_da5e4714ffc8349eb94e6053553d9bd3 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "head_stylesheets"));
 
         // line 19
-        echo "        <link rel=\"stylesheet\" href=\"";
+        echo "      <link rel=\"stylesheet\" href=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("bundles/easyadmin/app.css"), "html", null, true);
         echo "\">
     ";
@@ -1697,7 +1697,7 @@ $context["item"], "isMenuSection", [], "any", false, false, false, 119)) {
     <title>{{ page_title_block_output|striptags|raw }}</title>
 
     {% block head_stylesheets %}
-        <link rel=\"stylesheet\" href=\"{{ asset('bundles/easyadmin/app.css') }}\">
+      <link rel=\"stylesheet\" href=\"{{ asset('bundles/easyadmin/app.css') }}\">
     {% endblock %}
 
     {% block configured_stylesheets %}

@@ -2,9 +2,6 @@
 
 namespace App\Controller;
 
-
-
-use App\Entity\Design;
 use App\Entity\DesignCategorie;
 use App\Entity\GraphismCategorie;
 use Doctrine\Persistence\ManagerRegistry;
@@ -12,16 +9,14 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-class DesignController extends AbstractController
+class GraphismCategorieController extends AbstractController
 {
-    #[Route('/design', name: 'app_design')]
+    #[Route('/graphism', name: 'app_graphism')]
     public function index(ManagerRegistry $manager): Response
     {
-        return $this->render('design/index.html.twig', [
-            'DesignList' => $manager->getRepository(Design::class)->findAll(),
+        return $this->render('graphism/index.html.twig', [
             'GraphismCategorieList' => $manager->getRepository(GraphismCategorie::class)->findAll(),
             'DesignCategorieList' => $manager->getRepository(DesignCategorie::class)->findAll(),
         ]);
     }
-  
 }

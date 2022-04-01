@@ -29,8 +29,8 @@
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             <li><a class="dropdown-item" href={{path("app_design")}}>Tous les design</a></li>
-           {% for Design in DesignList %}
-                <li><a class="dropdown-item">{{Design.designName}}</a></li>
+           {% for Categorie in DesignCategorieList %}
+                <li><a class="dropdown-item">{{Categorie.categorieName}}</a></li>
             {% endfor %}
           </ul>
         </li>
@@ -40,8 +40,9 @@
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             <li><a class="dropdown-item" href={{path("app_graphism")}}>Tous les graphism</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+           {% for Graphism in GraphismCategorieList %}
+                <li><a class="dropdown-item">{{Graphism.categorieName}}</a></li>
+           {% endfor %}
           </ul>
         </li>
          <li class="nav-item">

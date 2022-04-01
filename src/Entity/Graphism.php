@@ -16,64 +16,68 @@ class Graphism
     private $id;
 
     #[ORM\Column(type: 'string', length: 100)]
-    private $graphismName;
+    private $title;
 
-    #[ORM\OneToMany(mappedBy: 'graphism', targetEntity: Annonce::class)]
-    private $annonces;
+    #[ORM\Column(type: 'string', length: 255)]
+    private $description;
 
- 
+    #[ORM\Column(type: 'string', length: 255)]
+    private $media;
 
-    public function __construct()
-    {
-        $this->annonces = new ArrayCollection();
-    }
+    #[ORM\ManyToOne(targetEntity: GraphismCategorie::class, inversedBy: 'graphisms')]
+    private $categorie;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getGraphismName(): ?string
+    public function getTitle(): ?string
     {
-        return $this->graphismName;
+        return $this->title;
     }
 
-    public function setGraphismName(string $graphismName): self
+    public function setTitle(string $title): self
     {
-        $this->graphismName = $graphismName;
+        $this->title = $title;
 
         return $this;
     }
 
-    /**
-     * @return Collection<int, Annonce>
-     */
-    public function getAnnonces(): Collection
+    public function getDescription(): ?string
     {
-        return $this->annonces;
+        return $this->description;
     }
 
-    public function addAnnonce(Annonce $annonce): self
+    public function setDescription(string $description): self
     {
-        if (!$this->annonces->contains($annonce)) {
-            $this->annonces[] = $annonce;
-            $annonce->setGraphism($this);
-        }
+        $this->description = $description;
 
         return $this;
     }
 
-    public function removeAnnonce(Annonce $annonce): self
+    public function getMedia(): ?string
     {
-        if ($this->annonces->removeElement($annonce)) {
-            // set the owning side to null (unless already changed)
-            if ($annonce->getGraphism() === $this) {
-                $annonce->setGraphism(null);
-            }
-        }
+        return $this->media;
+    }
+
+    public function setMedia(string $media): self
+    {
+        $this->media = $media;
 
         return $this;
     }
 
+    public function getCategorie(): ?GraphismCategorie
+    {
+        return $this->categorie;
+    }
+
+    public function setCategorie(?GraphismCategorie $categorie): self
+    {
+        $this->categorie = $categorie;
+
+        return $this;
+    }
    
 }

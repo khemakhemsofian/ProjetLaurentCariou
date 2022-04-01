@@ -3,6 +3,10 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Admin;
+use App\Entity\Design;
+use App\Entity\DesignCategorie;
+use App\Entity\Graphism;
+use App\Entity\GraphismCategorie;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
@@ -49,6 +53,10 @@ class DashboardController extends AbstractDashboardController
         if($this->getUser() && $this->isGranted('ROLE_ADMIN') ) {
             yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
             yield MenuItem::linkToCrud('admin', 'fas fa-list', Admin::class);
+            yield MenuItem::linkToCrud('graphism', 'fas fa-list', Graphism::class);
+            yield MenuItem::linkToCrud('graphismCategorie', 'fas fa-list', GraphismCategorie::class);
+            yield MenuItem::linkToCrud('design', 'fas fa-list', Design::class);
+            yield MenuItem::linkToCrud('designCategorie', 'fas fa-list', DesignCategorie::class); 
         }
         
     }

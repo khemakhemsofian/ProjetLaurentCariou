@@ -16,62 +16,67 @@ class Design
     private $id;
 
     #[ORM\Column(type: 'string', length: 100)]
-    private $designName;
+    private $title;
 
+    #[ORM\Column(type: 'string', length: 255)]
+    private $description;
 
-    #[ORM\OneToMany(mappedBy: 'design', targetEntity: Annonce::class)]
-    private $annonces;
+    #[ORM\Column(type: 'string', length: 255)]
+    private $media;
 
+    #[ORM\ManyToOne(targetEntity: DesignCategorie::class, inversedBy: 'designs')]
+    private $categorie;
 
-
-    public function __construct()
-    {
-        $this->annonces = new ArrayCollection();
-    }
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getDesignName(): ?string
+    public function getTitle(): ?string
     {
-        return $this->designName;
+        return $this->title;
     }
 
-    public function setDesignName(string $designName): self
+    public function setTitle(string $title): self
     {
-        $this->designName = $designName;
-
-        return $this;
-    }
-    
-    /**
-     * @return Collection<int, Annonce>
-     */
-    public function getAnnonces(): Collection
-    {
-        return $this->annonces;
-    }
-
-    public function addAnnonce(Annonce $annonce): self
-    {
-        if (!$this->annonces->contains($annonce)) {
-            $this->annonces[] = $annonce;
-            $annonce->setDesign($this);
-        }
+        $this->title = $title;
 
         return $this;
     }
 
-    public function removeAnnonce(Annonce $annonce): self
+    public function getDescription(): ?string
     {
-        if ($this->annonces->removeElement($annonce)) {
-            // set the owning side to null (unless already changed)
-            if ($annonce->getDesign() === $this) {
-                $annonce->setDesign(null);
-            }
-        }
+        return $this->description;
+    }
+
+    public function setDescription(string $description): self
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    public function getMedia(): ?string
+    {
+        return $this->media;
+    }
+
+    public function setMedia(string $media): self
+    {
+        $this->media = $media;
+
+        return $this;
+    }
+
+    public function getCategorie(): ?DesignCategorie
+    {
+        return $this->categorie;
+    }
+
+    public function setCategorie(?DesignCategorie $categorie): self
+    {
+        $this->categorie = $categorie;
 
         return $this;
     }

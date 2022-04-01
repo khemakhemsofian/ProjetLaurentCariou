@@ -90,16 +90,16 @@ class __TwigTemplate_c97c827f3322266d988c416ee3df3f77 extends Template
            ";
         // line 32
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["DesignList"]) || array_key_exists("DesignList", $context) ? $context["DesignList"] : (function () { throw new RuntimeError('Variable "DesignList" does not exist.', 32, $this->source); })()));
-        foreach ($context['_seq'] as $context["_key"] => $context["Design"]) {
+        $context['_seq'] = twig_ensure_traversable((isset($context["DesignCategorieList"]) || array_key_exists("DesignCategorieList", $context) ? $context["DesignCategorieList"] : (function () { throw new RuntimeError('Variable "DesignCategorieList" does not exist.', 32, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["Categorie"]) {
             // line 33
             echo "                <li><a class=\"dropdown-item\">";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["Design"], "designName", [], "any", false, false, false, 33), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["Categorie"], "categorieName", [], "any", false, false, false, 33), "html", null, true);
             echo "</a></li>
             ";
         }
         $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['Design'], $context['_parent'], $context['loop']);
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['Categorie'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 35
         echo "          </ul>
@@ -116,13 +116,26 @@ class __TwigTemplate_c97c827f3322266d988c416ee3df3f77 extends Template
         // line 42
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_graphism");
         echo ">Tous les graphism</a></li>
-            <li><a class=\"dropdown-item\" href=\"#\">Another action</a></li>
-            <li><a class=\"dropdown-item\" href=\"#\">Something else here</a></li>
-          </ul>
+           ";
+        // line 43
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["GraphismCategorieList"]) || array_key_exists("GraphismCategorieList", $context) ? $context["GraphismCategorieList"] : (function () { throw new RuntimeError('Variable "GraphismCategorieList" does not exist.', 43, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["Graphism"]) {
+            // line 44
+            echo "                <li><a class=\"dropdown-item\">";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["Graphism"], "categorieName", [], "any", false, false, false, 44), "html", null, true);
+            echo "</a></li>
+           ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['Graphism'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 46
+        echo "          </ul>
         </li>
          <li class=\"nav-item\">
           <a class=\"nav-link\" href=";
-        // line 48
+        // line 49
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_contact");
         echo ">Contact</a>
         </li>
@@ -135,14 +148,14 @@ class __TwigTemplate_c97c827f3322266d988c416ee3df3f77 extends Template
        <main>
          <div>
              ";
-        // line 58
-        $this->displayBlock('body', $context, $blocks);
         // line 59
+        $this->displayBlock('body', $context, $blocks);
+        // line 60
         echo "         </div>
        </main>
         <footer>
             ";
-        // line 62
+        // line 63
         $this->displayBlock('footer', $context, $blocks);
         echo " 
         </footer>
@@ -177,7 +190,7 @@ class __TwigTemplate_c97c827f3322266d988c416ee3df3f77 extends Template
 
     }
 
-    // line 58
+    // line 59
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -195,7 +208,7 @@ class __TwigTemplate_c97c827f3322266d988c416ee3df3f77 extends Template
 
     }
 
-    // line 62
+    // line 63
     public function block_footer($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -225,7 +238,7 @@ class __TwigTemplate_c97c827f3322266d988c416ee3df3f77 extends Template
 
     public function getDebugInfo()
     {
-        return array (  199 => 62,  181 => 58,  162 => 5,  146 => 62,  141 => 59,  139 => 58,  126 => 48,  117 => 42,  110 => 38,  105 => 35,  96 => 33,  92 => 32,  88 => 31,  81 => 27,  75 => 24,  58 => 9,  52 => 5,  46 => 1,);
+        return array (  212 => 63,  194 => 59,  175 => 5,  159 => 63,  154 => 60,  152 => 59,  139 => 49,  134 => 46,  125 => 44,  121 => 43,  117 => 42,  110 => 38,  105 => 35,  96 => 33,  92 => 32,  88 => 31,  81 => 27,  75 => 24,  58 => 9,  52 => 5,  46 => 1,);
     }
 
     public function getSourceContext()
@@ -261,8 +274,8 @@ class __TwigTemplate_c97c827f3322266d988c416ee3df3f77 extends Template
           </a>
           <ul class=\"dropdown-menu\" aria-labelledby=\"navbarDropdownMenuLink\">
             <li><a class=\"dropdown-item\" href={{path(\"app_design\")}}>Tous les design</a></li>
-           {% for Design in DesignList %}
-                <li><a class=\"dropdown-item\">{{Design.designName}}</a></li>
+           {% for Categorie in DesignCategorieList %}
+                <li><a class=\"dropdown-item\">{{Categorie.categorieName}}</a></li>
             {% endfor %}
           </ul>
         </li>
@@ -272,8 +285,9 @@ class __TwigTemplate_c97c827f3322266d988c416ee3df3f77 extends Template
           </a>
           <ul class=\"dropdown-menu\" aria-labelledby=\"navbarDropdownMenuLink\">
             <li><a class=\"dropdown-item\" href={{path(\"app_graphism\")}}>Tous les graphism</a></li>
-            <li><a class=\"dropdown-item\" href=\"#\">Another action</a></li>
-            <li><a class=\"dropdown-item\" href=\"#\">Something else here</a></li>
+           {% for Graphism in GraphismCategorieList %}
+                <li><a class=\"dropdown-item\">{{Graphism.categorieName}}</a></li>
+           {% endfor %}
           </ul>
         </li>
          <li class=\"nav-item\">

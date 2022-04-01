@@ -5,7 +5,6 @@
 return [
     'app_about' => [[], ['_controller' => 'App\\Controller\\AboutController::index'], [], [['text', '/about']], [], [], []],
     'admin' => [[], ['_controller' => 'App\\Controller\\Admin\\DashboardController::index'], [], [['text', '/admin']], [], [], []],
-    'app_annonce' => [[], ['_controller' => 'App\\Controller\\AnnonceController::index'], [], [['text', '/annonce']], [], [], []],
     'app_contact' => [[], ['_controller' => 'App\\Controller\\ContactController::index'], [], [['text', '/contact']], [], [], []],
     'app_design' => [[], ['_controller' => 'App\\Controller\\DesignController::index'], [], [['text', '/design']], [], [], []],
     'app_graphism' => [[], ['_controller' => 'App\\Controller\\GraphismController::index'], [], [['text', '/graphism']], [], [], []],

@@ -43,6 +43,12 @@ class GraphismCategorie
         return $this;
     }
 
+    public function __toString()
+    {
+    return $this->id;
+    }
+
+
     /**
      * @return Collection<int, Graphism>
      */

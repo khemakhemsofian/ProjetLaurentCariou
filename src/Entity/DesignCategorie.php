@@ -2,10 +2,11 @@
 
 namespace App\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\Collection;
 use App\Repository\DesignCategorieRepository;
 use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
-use Doctrine\ORM\Mapping as ORM;
+
 
 #[ORM\Entity(repositoryClass: DesignCategorieRepository::class)]
 class DesignCategorie
@@ -42,6 +43,11 @@ class DesignCategorie
 
         return $this;
     }
+   
+    public function __toString()
+    {
+    return $this->id;
+    }
 
     /**
      * @return Collection<int, Design>
@@ -54,6 +60,7 @@ class DesignCategorie
     public function addDesign(Design $design): self
     {
         if (!$this->designs->contains($design)) {
+           
             $this->designs[] = $design;
             $design->setCategorie($this);
         }

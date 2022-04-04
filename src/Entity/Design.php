@@ -69,6 +69,12 @@ class Design
         return $this;
     }
 
+    public function __toString()
+    {
+    return $this->id;
+    }
+
+
     public function getCategorie(): ?DesignCategorie
     {
         return $this->categorie;

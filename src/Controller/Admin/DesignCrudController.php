@@ -33,8 +33,7 @@ class DesignCrudController extends AbstractCrudController
     
     public function persistEntity(EntityManagerInterface $entityManager, $entityInstance): void
     {
-
-        $image = new File ($entityInstance-> getMedia());
+        $image = new File ($entityInstance->getMedia());
         $imageName = md5(uniqid()) . '.' .$image->guessExtension();
         $image->move(
              $this->getParameter('upload_files'),
@@ -45,14 +44,15 @@ class DesignCrudController extends AbstractCrudController
         $entityManager->persist($entityInstance);
         $entityManager->flush();
     }
-    public function UpdateEntity(EntityManagerInterface $entityManager, $entityInstance): void
+   
+     public function UpdateEntity(EntityManagerInterface $entityManager, $entityInstance): void
     {
-        if ($entityInstance-> getMedia()) {
+        if ($entityInstance->getMedia()) {
             $entityInstance->setMedia(
-                new File($this->getParameter('upload_files') . '/' . $entityInstance-> getMedia())
+                new File($this->getParameter('upload_files') . '/' . $entityInstance->getMedia())
             );
         }
-        $image = new File ($entityInstance-> getMedia());
+        $image = new File ($entityInstance->getMedia());
          $imageName = md5(uniqid()) . '.' . $image->guessExtension();
         $image->move(
             $this->getParameter('upload_files'),

@@ -29,11 +29,18 @@ Encore
     .addPlugin(new WebpackRTLPlugin())
 
     .addEntry('app', './assets/js/app.js')
-    .addEntry('form-type-code-editor', './assets/js/form-type-code-editor.js')
-    .addEntry('form-type-text-editor', './assets/js/form-type-text-editor.js')
-    .addEntry('form-type-collection', './assets/js/form-type-collection.js')
-    .addEntry('form-type-slug', './assets/js/form-type-slug.js')
-    .addEntry('form-type-textarea', './assets/js/form-type-textarea.js')
+    .addEntry('form', './assets/js/form.js')
+    .addEntry('page-layout', './assets/js/page-layout.js')
+    .addEntry('page-color-scheme', './assets/js/page-color-scheme.js')
+    .addEntry('field-boolean', './assets/js/field-boolean.js')
+    .addEntry('field-code-editor', './assets/js/field-code-editor.js')
+    .addEntry('field-collection', './assets/js/field-collection.js')
+    .addEntry('field-file-upload', './assets/js/field-file-upload.js')
+    .addEntry('field-image', './assets/js/field-image.js')
+    .addEntry('field-slug', './assets/js/field-slug.js')
+    .addEntry('field-textarea', './assets/js/field-textarea.js')
+    .addEntry('field-text-editor', './assets/js/field-text-editor.js')
+    .addEntry('login', './assets/js/login.js')
 ;
 
 module.exports = Encore.getWebpackConfig();

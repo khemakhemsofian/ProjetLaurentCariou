@@ -63,9 +63,9 @@ class __TwigTemplate_2461a3197b6b52819d740dcc2df5c29c extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@EasyAdmin/crud/index.html.twig"));
 
         // line 5
-        $context["__internal_683411fc52326d532df7dd6a04931abdedb2b405070bdfc45e7754665b1013e1"] = twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["ea"]) || array_key_exists("ea", $context) ? $context["ea"] : (function () { throw new RuntimeError('Variable "ea" does not exist.', 5, $this->source); })()), "i18n", [], "any", false, false, false, 5), "translationDomain", [], "any", false, false, false, 5);
+        $context["__internal_825a14729ab640e9b725a1523c96823759d9ac15d323d1d2542ab1fd991f1123"] = twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["ea"]) || array_key_exists("ea", $context) ? $context["ea"] : (function () { throw new RuntimeError('Variable "ea" does not exist.', 5, $this->source); })()), "i18n", [], "any", false, false, false, 5), "translationDomain", [], "any", false, false, false, 5);
         // line 10
-        $context["ea_field_assts"] = twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["ea"]) || array_key_exists("ea", $context) ? $context["ea"] : (function () { throw new RuntimeError('Variable "ea" does not exist.', 10, $this->source); })()), "crud", [], "any", false, false, false, 10), "fieldAssets", [0 => twig_constant("EasyCorp\\Bundle\\EasyAdminBundle\\Config\\Crud::PAGE_INDEX")], "method", false, false, false, 10);
+        $context["ea_field_assets"] = twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["ea"]) || array_key_exists("ea", $context) ? $context["ea"] : (function () { throw new RuntimeError('Variable "ea" does not exist.', 10, $this->source); })()), "crud", [], "any", false, false, false, 10), "fieldAssets", [0 => twig_constant("EasyCorp\\Bundle\\EasyAdminBundle\\Config\\Crud::PAGE_INDEX")], "method", false, false, false, 10);
         // line 47
         $context["has_batch_actions"] = (twig_length_filter($this->env, (isset($context["batch_actions"]) || array_key_exists("batch_actions", $context) ? $context["batch_actions"] : (function () { throw new RuntimeError('Variable "batch_actions" does not exist.', 47, $this->source); })())) > 0);
         // line 4
@@ -133,7 +133,7 @@ class __TwigTemplate_2461a3197b6b52819d740dcc2df5c29c extends Template
     ";
         // line 14
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["ea_field_assts"]) || array_key_exists("ea_field_assts", $context) ? $context["ea_field_assts"] : (function () { throw new RuntimeError('Variable "ea_field_assts" does not exist.', 14, $this->source); })()), "headContents", [], "any", false, false, false, 14));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["ea_field_assets"]) || array_key_exists("ea_field_assets", $context) ? $context["ea_field_assets"] : (function () { throw new RuntimeError('Variable "ea_field_assets" does not exist.', 14, $this->source); })()), "headContents", [], "any", false, false, false, 14));
         foreach ($context['_seq'] as $context["_key"] => $context["htmlContent"]) {
             // line 15
             echo "        ";
@@ -169,7 +169,7 @@ class __TwigTemplate_2461a3197b6b52819d740dcc2df5c29c extends Template
     ";
         // line 21
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["ea_field_assts"]) || array_key_exists("ea_field_assts", $context) ? $context["ea_field_assts"] : (function () { throw new RuntimeError('Variable "ea_field_assts" does not exist.', 21, $this->source); })()), "bodyContents", [], "any", false, false, false, 21));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["ea_field_assets"]) || array_key_exists("ea_field_assets", $context) ? $context["ea_field_assets"] : (function () { throw new RuntimeError('Variable "ea_field_assets" does not exist.', 21, $this->source); })()), "bodyContents", [], "any", false, false, false, 21));
         foreach ($context['_seq'] as $context["_key"] => $context["htmlContent"]) {
             // line 22
             echo "        ";
@@ -204,11 +204,11 @@ class __TwigTemplate_2461a3197b6b52819d740dcc2df5c29c extends Template
         echo "
     ";
         // line 28
-        echo twig_include($this->env, $context, "@EasyAdmin/includes/_css_assets.html.twig", ["assets" => twig_get_attribute($this->env, $this->source, (isset($context["ea_field_assts"]) || array_key_exists("ea_field_assts", $context) ? $context["ea_field_assts"] : (function () { throw new RuntimeError('Variable "ea_field_assts" does not exist.', 28, $this->source); })()), "cssAssets", [], "any", false, false, false, 28)], false);
+        echo twig_include($this->env, $context, "@EasyAdmin/includes/_css_assets.html.twig", ["assets" => twig_get_attribute($this->env, $this->source, (isset($context["ea_field_assets"]) || array_key_exists("ea_field_assets", $context) ? $context["ea_field_assets"] : (function () { throw new RuntimeError('Variable "ea_field_assets" does not exist.', 28, $this->source); })()), "cssAssets", [], "any", false, false, false, 28)], false);
         echo "
     ";
         // line 29
-        echo twig_include($this->env, $context, "@EasyAdmin/includes/_encore_link_tags.html.twig", ["assets" => twig_get_attribute($this->env, $this->source, (isset($context["ea_field_assts"]) || array_key_exists("ea_field_assts", $context) ? $context["ea_field_assts"] : (function () { throw new RuntimeError('Variable "ea_field_assts" does not exist.', 29, $this->source); })()), "webpackEncoreAssets", [], "any", false, false, false, 29)], false);
+        echo twig_include($this->env, $context, "@EasyAdmin/includes/_encore_link_tags.html.twig", ["assets" => twig_get_attribute($this->env, $this->source, (isset($context["ea_field_assets"]) || array_key_exists("ea_field_assets", $context) ? $context["ea_field_assets"] : (function () { throw new RuntimeError('Variable "ea_field_assets" does not exist.', 29, $this->source); })()), "webpackEncoreAssets", [], "any", false, false, false, 29)], false);
         echo "
 ";
         
@@ -235,11 +235,11 @@ class __TwigTemplate_2461a3197b6b52819d740dcc2df5c29c extends Template
         echo "
     ";
         // line 34
-        echo twig_include($this->env, $context, "@EasyAdmin/includes/_js_assets.html.twig", ["assets" => twig_get_attribute($this->env, $this->source, (isset($context["ea_field_assts"]) || array_key_exists("ea_field_assts", $context) ? $context["ea_field_assts"] : (function () { throw new RuntimeError('Variable "ea_field_assts" does not exist.', 34, $this->source); })()), "jsAssets", [], "any", false, false, false, 34)], false);
+        echo twig_include($this->env, $context, "@EasyAdmin/includes/_js_assets.html.twig", ["assets" => twig_get_attribute($this->env, $this->source, (isset($context["ea_field_assets"]) || array_key_exists("ea_field_assets", $context) ? $context["ea_field_assets"] : (function () { throw new RuntimeError('Variable "ea_field_assets" does not exist.', 34, $this->source); })()), "jsAssets", [], "any", false, false, false, 34)], false);
         echo "
     ";
         // line 35
-        echo twig_include($this->env, $context, "@EasyAdmin/includes/_encore_script_tags.html.twig", ["assets" => twig_get_attribute($this->env, $this->source, (isset($context["ea_field_assts"]) || array_key_exists("ea_field_assts", $context) ? $context["ea_field_assts"] : (function () { throw new RuntimeError('Variable "ea_field_assts" does not exist.', 35, $this->source); })()), "webpackEncoreAssets", [], "any", false, false, false, 35)], false);
+        echo twig_include($this->env, $context, "@EasyAdmin/includes/_encore_script_tags.html.twig", ["assets" => twig_get_attribute($this->env, $this->source, (isset($context["ea_field_assets"]) || array_key_exists("ea_field_assets", $context) ? $context["ea_field_assets"] : (function () { throw new RuntimeError('Variable "ea_field_assets" does not exist.', 35, $this->source); })()), "webpackEncoreAssets", [], "any", false, false, false, 35)], false);
         echo "
 ";
         
@@ -269,7 +269,7 @@ class __TwigTemplate_2461a3197b6b52819d740dcc2df5c29c extends Template
         echo (((null === (isset($context["custom_page_title"]) || array_key_exists("custom_page_title", $context) ? $context["custom_page_title"] : (function () { throw new RuntimeError('Variable "custom_page_title" does not exist.', 41, $this->source); })()))) ? ($this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source,         // line 42
 (isset($context["ea"]) || array_key_exists("ea", $context) ? $context["ea"] : (function () { throw new RuntimeError('Variable "ea" does not exist.', 42, $this->source); })()), "crud", [], "any", false, false, false, 42), "defaultPageTitle", [0 => "index"], "method", false, false, false, 42), twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["ea"]) || array_key_exists("ea", $context) ? $context["ea"] : (function () { throw new RuntimeError('Variable "ea" does not exist.', 42, $this->source); })()), "i18n", [], "any", false, false, false, 42), "translationParameters", [], "any", false, false, false, 42), "EasyAdminBundle")) : ($this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans(        // line 43
 (isset($context["custom_page_title"]) || array_key_exists("custom_page_title", $context) ? $context["custom_page_title"] : (function () { throw new RuntimeError('Variable "custom_page_title" does not exist.', 43, $this->source); })()), twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["ea"]) || array_key_exists("ea", $context) ? $context["ea"] : (function () { throw new RuntimeError('Variable "ea" does not exist.', 43, $this->source); })()), "i18n", [], "any", false, false, false, 43), "translationParameters", [], "any", false, false, false, 43),         // line 5
-(isset($context["__internal_683411fc52326d532df7dd6a04931abdedb2b405070bdfc45e7754665b1013e1"]) || array_key_exists("__internal_683411fc52326d532df7dd6a04931abdedb2b405070bdfc45e7754665b1013e1", $context) ? $context["__internal_683411fc52326d532df7dd6a04931abdedb2b405070bdfc45e7754665b1013e1"] : (function () { throw new RuntimeError('Variable "__internal_683411fc52326d532df7dd6a04931abdedb2b405070bdfc45e7754665b1013e1" does not exist.', 5, $this->source); })()))));
+(isset($context["__internal_825a14729ab640e9b725a1523c96823759d9ac15d323d1d2542ab1fd991f1123"]) || array_key_exists("__internal_825a14729ab640e9b725a1523c96823759d9ac15d323d1d2542ab1fd991f1123", $context) ? $context["__internal_825a14729ab640e9b725a1523c96823759d9ac15d323d1d2542ab1fd991f1123"] : (function () { throw new RuntimeError('Variable "__internal_825a14729ab640e9b725a1523c96823759d9ac15d323d1d2542ab1fd991f1123" does not exist.', 5, $this->source); })()))));
         $___internal_parse_4_ = ('' === $tmp = ob_get_clean()) ? '' : new Markup($tmp, $this->env->getCharset());
         // line 39
         echo twig_spaceless($___internal_parse_4_);
@@ -1068,32 +1068,32 @@ class __TwigTemplate_2461a3197b6b52819d740dcc2df5c29c extends Template
 {% block body_id entities|length > 0 ? 'ea-index-' ~ entities|first.name : '' %}
 {% block body_class 'ea-index' ~ (entities|length > 0 ? ' ea-index-' ~ entities|first.name : '') %}
 
-{% set ea_field_assts = ea.crud.fieldAssets(constant('EasyCorp\\\\Bundle\\\\EasyAdminBundle\\\\Config\\\\Crud::PAGE_INDEX')) %}
+{% set ea_field_assets = ea.crud.fieldAssets(constant('EasyCorp\\\\Bundle\\\\EasyAdminBundle\\\\Config\\\\Crud::PAGE_INDEX')) %}
 
 {% block configured_head_contents %}
     {{ parent() }}
-    {% for htmlContent in ea_field_assts.headContents %}
+    {% for htmlContent in ea_field_assets.headContents %}
         {{ htmlContent|raw }}
     {% endfor %}
 {% endblock %}
 
 {% block configured_body_contents %}
     {{ parent() }}
-    {% for htmlContent in ea_field_assts.bodyContents %}
+    {% for htmlContent in ea_field_assets.bodyContents %}
         {{ htmlContent|raw }}
     {% endfor %}
 {% endblock %}
 
 {% block configured_stylesheets %}
     {{ parent() }}
-    {{ include('@EasyAdmin/includes/_css_assets.html.twig', { assets: ea_field_assts.cssAssets }, with_context = false) }}
-    {{ include('@EasyAdmin/includes/_encore_link_tags.html.twig', { assets: ea_field_assts.webpackEncoreAssets }, with_context = false) }}
+    {{ include('@EasyAdmin/includes/_css_assets.html.twig', { assets: ea_field_assets.cssAssets }, with_context = false) }}
+    {{ include('@EasyAdmin/includes/_encore_link_tags.html.twig', { assets: ea_field_assets.webpackEncoreAssets }, with_context = false) }}
 {% endblock %}
 
 {% block configured_javascripts %}
     {{ parent() }}
-    {{ include('@EasyAdmin/includes/_js_assets.html.twig', { assets: ea_field_assts.jsAssets }, with_context = false) }}
-    {{ include('@EasyAdmin/includes/_encore_script_tags.html.twig', { assets: ea_field_assts.webpackEncoreAssets }, with_context = false) }}
+    {{ include('@EasyAdmin/includes/_js_assets.html.twig', { assets: ea_field_assets.jsAssets }, with_context = false) }}
+    {{ include('@EasyAdmin/includes/_encore_script_tags.html.twig', { assets: ea_field_assets.webpackEncoreAssets }, with_context = false) }}
 {% endblock %}
 
 {% block content_title %}

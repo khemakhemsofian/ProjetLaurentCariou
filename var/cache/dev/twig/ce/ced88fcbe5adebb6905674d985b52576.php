@@ -45,15 +45,18 @@ class __TwigTemplate_d20dcec98efa9dee3adc92a3b182d712 extends Template
         echo "
 ";
         // line 5
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["filters_form"]) || array_key_exists("filters_form", $context) ? $context["filters_form"] : (function () { throw new RuntimeError('Variable "filters_form" does not exist.', 5, $this->source); })()), 'form_start', ["attr" => ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["filters_form"]) || array_key_exists("filters_form", $context) ? $context["filters_form"] : (function () { throw new RuntimeError('Variable "filters_form" does not exist.', 5, $this->source); })()), "vars", [], "any", false, false, false, 5), "id", [], "any", false, false, false, 5)]]);
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["filters_form"]) || array_key_exists("filters_form", $context) ? $context["filters_form"] : (function () { throw new RuntimeError('Variable "filters_form" does not exist.', 5, $this->source); })()), 'form_start', ["attr" => ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source,         // line 6
+(isset($context["filters_form"]) || array_key_exists("filters_form", $context) ? $context["filters_form"] : (function () { throw new RuntimeError('Variable "filters_form" does not exist.', 6, $this->source); })()), "vars", [], "any", false, false, false, 6), "id", [], "any", false, false, false, 6), "data-ea-filters-form-id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source,         // line 7
+(isset($context["filters_form"]) || array_key_exists("filters_form", $context) ? $context["filters_form"] : (function () { throw new RuntimeError('Variable "filters_form" does not exist.', 7, $this->source); })()), "vars", [], "any", false, false, false, 7), "id", [], "any", false, false, false, 7)]]);
+        // line 8
         echo "
     ";
-        // line 8
+        // line 11
         echo "    ";
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable($this->extensions['EasyCorp\Bundle\EasyAdminBundle\Twig\EasyAdminTwigExtension']->flattenArray((isset($context["form_action_query_string_as_array"]) || array_key_exists("form_action_query_string_as_array", $context) ? $context["form_action_query_string_as_array"] : (function () { throw new RuntimeError('Variable "form_action_query_string_as_array" does not exist.', 8, $this->source); })())));
+        $context['_seq'] = twig_ensure_traversable($this->extensions['EasyCorp\Bundle\EasyAdminBundle\Twig\EasyAdminTwigExtension']->flattenArray((isset($context["form_action_query_string_as_array"]) || array_key_exists("form_action_query_string_as_array", $context) ? $context["form_action_query_string_as_array"] : (function () { throw new RuntimeError('Variable "form_action_query_string_as_array" does not exist.', 11, $this->source); })())));
         foreach ($context['_seq'] as $context["paramName"] => $context["paramValue"]) {
-            // line 9
+            // line 12
             echo "        <input type=\"hidden\" name=\"";
             echo twig_escape_filter($this->env, $context["paramName"], "html", null, true);
             echo "\" value=\"";
@@ -64,15 +67,15 @@ class __TwigTemplate_d20dcec98efa9dee3adc92a3b182d712 extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['paramName'], $context['paramValue'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 11
+        // line 14
         echo "
     ";
-        // line 12
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["filters_form"]) || array_key_exists("filters_form", $context) ? $context["filters_form"] : (function () { throw new RuntimeError('Variable "filters_form" does not exist.', 12, $this->source); })()), 'widget');
+        // line 15
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["filters_form"]) || array_key_exists("filters_form", $context) ? $context["filters_form"] : (function () { throw new RuntimeError('Variable "filters_form" does not exist.', 15, $this->source); })()), 'widget');
         echo "
 ";
-        // line 13
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["filters_form"]) || array_key_exists("filters_form", $context) ? $context["filters_form"] : (function () { throw new RuntimeError('Variable "filters_form" does not exist.', 13, $this->source); })()), 'form_end');
+        // line 16
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["filters_form"]) || array_key_exists("filters_form", $context) ? $context["filters_form"] : (function () { throw new RuntimeError('Variable "filters_form" does not exist.', 16, $this->source); })()), 'form_end');
         echo "
 ";
         
@@ -95,7 +98,7 @@ class __TwigTemplate_d20dcec98efa9dee3adc92a3b182d712 extends Template
 
     public function getDebugInfo()
     {
-        return array (  75 => 13,  71 => 12,  68 => 11,  57 => 9,  52 => 8,  48 => 5,  45 => 4,  43 => 3,);
+        return array (  78 => 16,  74 => 15,  71 => 14,  60 => 12,  55 => 11,  52 => 8,  50 => 7,  49 => 6,  48 => 5,  45 => 4,  43 => 3,);
     }
 
     public function getSourceContext()
@@ -104,7 +107,10 @@ class __TwigTemplate_d20dcec98efa9dee3adc92a3b182d712 extends Template
 {# @var filters_form \\EasyCorp\\Bundle\\EasyAdminBundle\\Form\\Type\\FiltersFormType #}
 {% form_theme filters_form with ea.crud.formThemes only %}
 
-{{ form_start(filters_form, { attr: { id: filters_form.vars.id } }) }}
+{{ form_start(filters_form, { attr: {
+    id: filters_form.vars.id,
+    'data-ea-filters-form-id': filters_form.vars.id
+} }) }}
     {# browsers remove the query string when submitting forms using GET;
        that's why all query string parameters are added as hidden form fields #}
     {% for paramName, paramValue in form_action_query_string_as_array|ea_flatten_array %}

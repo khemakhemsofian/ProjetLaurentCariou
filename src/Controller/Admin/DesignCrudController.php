@@ -26,12 +26,16 @@ class DesignCrudController extends AbstractCrudController
            
             TextField::new('title'),
             TextEditorField::new('description'),
-            ImageField::new('media')->setUploadDir('public/upload')->setBasePath('upload/'),
+           /* ImageField::new('media')->setUploadDir('public/upload')->setBasePath('upload/'),*/
+           ImageField:: new('media')
+           ->setBasePath('upload/')
+           ->setUploadDir('public/upload/')
+           ->setUploadedFileNamePattern('[randomhash].[extension]'),
             AssociationField::new('categorie'),
         ];
     }
     
-    public function persistEntity(EntityManagerInterface $entityManager, $entityInstance): void
+   /* public function persistEntity(EntityManagerInterface $entityManager, $entityInstance): void
     {
         $image = new File ($entityInstance->getMedia());
         $imageName = md5(uniqid()) . '.' .$image->guessExtension();
@@ -62,5 +66,5 @@ class DesignCrudController extends AbstractCrudController
         $entityManager->persist($entityInstance);
         $entityManager->flush();
         
-    }
+    }*/
 }

@@ -7392,7 +7392,7 @@
         <argument key="authenticationUtils" type="service_closure" id="security.authentication_utils"/>
       </argument>
     </service>
-    <service id=".service_locator.t2o59Y7" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.LfMyWu0" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\Admin\AdminCrudController::autocomplete" type="service_closure" id=".service_locator.kEvhmk9"/>
@@ -7438,7 +7438,6 @@
         <argument key="App\Controller\Admin\DesignCategorieCrudController::persistEntity" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\Admin\DesignCategorieCrudController::renderFilters" type="service_closure" id=".service_locator.kEvhmk9"/>
         <argument key="App\Controller\Admin\DesignCategorieCrudController::updateEntity" type="service_closure" id=".service_locator.aKM6MDa"/>
-        <argument key="App\Controller\Admin\DesignCrudController::UpdateEntity" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\Admin\DesignCrudController::autocomplete" type="service_closure" id=".service_locator.kEvhmk9"/>
         <argument key="App\Controller\Admin\DesignCrudController::batchDelete" type="service_closure" id=".service_locator.esmk6IF"/>
         <argument key="App\Controller\Admin\DesignCrudController::configureActions" type="service_closure" id=".service_locator.R8Qy2_."/>
@@ -7459,6 +7458,7 @@
         <argument key="App\Controller\Admin\DesignCrudController::new" type="service_closure" id=".service_locator.kEvhmk9"/>
         <argument key="App\Controller\Admin\DesignCrudController::persistEntity" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\Admin\DesignCrudController::renderFilters" type="service_closure" id=".service_locator.kEvhmk9"/>
+        <argument key="App\Controller\Admin\DesignCrudController::updateEntity" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\Admin\GraphismCategorieCrudController::autocomplete" type="service_closure" id=".service_locator.kEvhmk9"/>
         <argument key="App\Controller\Admin\GraphismCategorieCrudController::batchDelete" type="service_closure" id=".service_locator.esmk6IF"/>
         <argument key="App\Controller\Admin\GraphismCategorieCrudController::configureActions" type="service_closure" id=".service_locator.R8Qy2_."/>
@@ -7556,7 +7556,6 @@
         <argument key="App\Controller\Admin\DesignCategorieCrudController:persistEntity" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\Admin\DesignCategorieCrudController:renderFilters" type="service_closure" id=".service_locator.kEvhmk9"/>
         <argument key="App\Controller\Admin\DesignCategorieCrudController:updateEntity" type="service_closure" id=".service_locator.aKM6MDa"/>
-        <argument key="App\Controller\Admin\DesignCrudController:UpdateEntity" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\Admin\DesignCrudController:autocomplete" type="service_closure" id=".service_locator.kEvhmk9"/>
         <argument key="App\Controller\Admin\DesignCrudController:batchDelete" type="service_closure" id=".service_locator.esmk6IF"/>
         <argument key="App\Controller\Admin\DesignCrudController:configureActions" type="service_closure" id=".service_locator.R8Qy2_."/>
@@ -7577,6 +7576,7 @@
         <argument key="App\Controller\Admin\DesignCrudController:new" type="service_closure" id=".service_locator.kEvhmk9"/>
         <argument key="App\Controller\Admin\DesignCrudController:persistEntity" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\Admin\DesignCrudController:renderFilters" type="service_closure" id=".service_locator.kEvhmk9"/>
+        <argument key="App\Controller\Admin\DesignCrudController:updateEntity" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\Admin\GraphismCategorieCrudController:autocomplete" type="service_closure" id=".service_locator.kEvhmk9"/>
         <argument key="App\Controller\Admin\GraphismCategorieCrudController:batchDelete" type="service_closure" id=".service_locator.esmk6IF"/>
         <argument key="App\Controller\Admin\GraphismCategorieCrudController:configureActions" type="service_closure" id=".service_locator.R8Qy2_."/>
@@ -8401,12 +8401,12 @@
       <argument type="service" id="EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.t2o59Y7"/>
+      <argument type="service" id=".service_locator.LfMyWu0"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.t2o59Y7"/>
+      <argument type="service" id=".service_locator.LfMyWu0"/>
     </service>
     <service id="debug.traced.messenger.bus.default.inner" class="Symfony\Component\Messenger\MessageBus">
       <argument type="iterator">
@@ -9413,7 +9413,7 @@
     <service id="sensio_framework_extra.security.expression_language" alias="sensio_framework_extra.security.expression_language.default"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.gSv9zYw" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.t2o59Y7"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.LfMyWu0"/>
     <service id="session" alias=".session.do-not-use" public="true">
       <deprecated package="symfony/framework-bundle" version="5.3">The "%alias_id%" service and "SessionInterface" alias are deprecated, use "$requestStack-&gt;getSession()" instead.</deprecated>
     </service>
@@ -9442,7 +9442,7 @@
     <service id=".service_locator.nTL_G5r" alias=".service_locator.esmk6IF"/>
     <service id=".service_locator.hNls88j" alias=".service_locator.ENGuM7_"/>
     <service id=".service_locator.6rNHno." alias=".service_locator.riFbGaB"/>
-    <service id=".service_locator.oUkWJbl" alias=".service_locator.t2o59Y7"/>
+    <service id=".service_locator..y7H_dD" alias=".service_locator.LfMyWu0"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.19_mNxd"/>
     <service id=".service_locator.3l1LkXo" alias=".service_locator.ZWFYuib"/>
     <service id=".service_locator.nk0lT0X" alias=".service_locator.1kmbKC8"/>

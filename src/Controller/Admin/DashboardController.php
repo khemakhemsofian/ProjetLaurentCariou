@@ -2,7 +2,9 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\About;
 use App\Entity\Admin;
+use App\Entity\Contact;
 use App\Entity\Design;
 use App\Entity\DesignCategorie;
 use App\Entity\Graphism;
@@ -56,7 +58,9 @@ class DashboardController extends AbstractDashboardController
             yield MenuItem::linkToCrud('graphism', 'fas fa-list', Graphism::class);
             yield MenuItem::linkToCrud('graphismCategorie', 'fas fa-list', GraphismCategorie::class);
             yield MenuItem::linkToCrud('design', 'fas fa-list', Design::class);
-            yield MenuItem::linkToCrud('designCategorie', 'fas fa-list', DesignCategorie::class); 
+            yield MenuItem::linkToCrud('designCategorie', 'fas fa-list', DesignCategorie::class);
+            yield MenuItem::linkToCrud('contact', 'fas fa-list', Contact::class);  
+            yield MenuItem::linkToCrud('about me', 'fas fa-list', About::class);
         }
         
     }

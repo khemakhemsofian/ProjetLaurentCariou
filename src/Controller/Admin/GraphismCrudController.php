@@ -23,14 +23,18 @@ class GraphismCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-           
+            IdField::new('id'),
             TextField::new('title'),
             TextEditorField::new('description'),
-            ImageField::new('media')->setUploadDir('public/upload')->setBasePath('upload/'),
+           // ImageField::new('media')->setUploadDir('public/upload')->setBasePath('upload/'),
+            ImageField:: new('media')
+            ->setBasePath('upload/')
+            ->setUploadDir('public/upload/')
+            ->setUploadedFileNamePattern('[randomhash].[extension]'),
             AssociationField::new('categorie'),
         ];
     }
-    public function persistEntity(EntityManagerInterface $entityManager, $entityInstance): void
+    /*public function persistEntity(EntityManagerInterface $entityManager, $entityInstance): void
     {
 
         $image = new File ($entityInstance-> getMedia());
@@ -61,5 +65,5 @@ class GraphismCrudController extends AbstractCrudController
         $entityManager->persist($entityInstance);
         $entityManager->flush();
         
-    }
+    }*/
 }

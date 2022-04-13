@@ -2,17 +2,23 @@
 
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Entity\Contact;
+use App\Entity\DesignCategorie;
+use App\Entity\GraphismCategorie;
+use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class ContactController extends AbstractController
 {
     #[Route('/contact', name: 'app_contact')]
-    public function index(): Response
+    public function index(ManagerRegistry $manager): Response
     {
         return $this->render('contact/index.html.twig', [
-            'controller_name' => 'ContactController',
+            'contact' => $manager->getRepository(Contact::class)->findAll(),
+            'GraphismCategorieList' => $manager->getRepository(GraphismCategorie::class)->findAll(),
+            'DesignCategorieList' => $manager->getRepository(DesignCategorie::class)->findAll(),
         ]);
     }
 }

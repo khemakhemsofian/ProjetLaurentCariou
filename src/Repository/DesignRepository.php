@@ -45,22 +45,22 @@ class DesignRepository extends ServiceEntityRepository
         }
     }
 
-    // /**
-    //  * @return Design[] Returns an array of Design objects
-    //  */
-    /*
-    public function findByExampleField($value)
+     /**
+      * @return Design[] Returns an array of Design objects
+      */
+    
+    public function findByDesignId($value)
     {
-        return $this->createQueryBuilder('d')
-            ->andWhere('d.exampleField = :val')
+        
+        return $this->createQueryBuilder('i')
+            ->andWhere('i.id > :val')
             ->setParameter('val', $value)
-            ->orderBy('d.id', 'ASC')
-            ->setMaxResults(10)
+            ->orderBy('i.id', 'ASC')
             ->getQuery()
             ->getResult()
         ;
     }
-    */
+    
 
     /*
     public function findOneBySomeField($value): ?Design

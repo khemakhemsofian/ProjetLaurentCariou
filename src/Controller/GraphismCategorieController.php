@@ -11,11 +11,11 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class GraphismCategorieController extends AbstractController
 {
-    #[Route('/graphism', name: 'app_graphism')]
-    public function index(ManagerRegistry $manager): Response
+    #[Route('/graphism/{id}', name: 'app_graphism')]
+    public function index(ManagerRegistry $manager, $id): Response
     {
         return $this->render('graphism/index.html.twig', [
-            'GraphismCategorieList' => $manager->getRepository(GraphismCategorie::class)->findAll(),
+            'GraphismCategorieList' => $manager->getRepository(GraphismCategorie::class)->find($id),
             'DesignCategorieList' => $manager->getRepository(DesignCategorie::class)->findAll(),
         ]);
     }

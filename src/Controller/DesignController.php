@@ -22,12 +22,13 @@ class DesignController extends AbstractController
     #[Route('/design/{categorieName}', name: 'app_design')]
     public function index(ManagerRegistry $manager,PaginatorInterface $paginator,DesignRepository $designRepository,Request $request, $categorieName=null): Response
     {
-        $data = $designRepository->findAll();
+        $categorieName = $request->query->get('q');
+        $data =  $designRepository->findByDesignCategorie($categorieName);
         $designPage = $paginator->paginate(
             $data,
             $request->query->getInt('page',1),4
         );
-        $designPage->findByDesignCategorie($categorieName);
+       
        
     
       
@@ -35,7 +36,7 @@ class DesignController extends AbstractController
         
         return $this->render('design/index.html.twig', [
             'DesignPage'=> $designPage,
-            'DesignList' => $manager->getRepository(Design::class)->findByDesignCategorie($categorieName),
+            
             'GraphismCategorieList' => $manager->getRepository(GraphismCategorie::class)->findAll(),
             'DesignCategorieList' => $manager->getRepository(DesignCategorie::class)->findAll(),
         ]);

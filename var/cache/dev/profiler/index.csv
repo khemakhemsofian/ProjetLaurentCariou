@@ -300,3 +300,11 @@ ce965c,127.0.0.1,GET,https://127.0.0.1:8000/upload/zzz,1651675456,,404
 1744dc,127.0.0.1,GET,https://127.0.0.1:8000/design/meca,1651675563,,200
 925e1d,127.0.0.1,GET,https://127.0.0.1:8000/design/guns,1651675568,,200
 a718ed,127.0.0.1,GET,https://127.0.0.1:8000/design/guns,1651675575,,200
+5a34e7,127.0.0.1,GET,https://127.0.0.1:8000/bundles/easyadmin/fonts/fa-regular-400.0caf4c6c.woff2,1651675811,47db7d,404
+47db7d,127.0.0.1,GET,https://127.0.0.1:8000/bundles/easyadmin/fonts/fa-regular-400.0caf4c6c.woff2,1651675811,,404
+c0afa8,127.0.0.1,GET,https://127.0.0.1:8000/bundles/easyadmin/fonts/fa-solid-900.59edf72a.woff2,1651675811,f5d89a,404
+f5d89a,127.0.0.1,GET,https://127.0.0.1:8000/bundles/easyadmin/fonts/fa-solid-900.59edf72a.woff2,1651675811,,404
+cdf85b,127.0.0.1,GET,https://127.0.0.1:8000/bundles/easyadmin/fonts/fa-regular-400.0d03b1bb.ttf,1651675812,f4d82d,404
+f4d82d,127.0.0.1,GET,https://127.0.0.1:8000/bundles/easyadmin/fonts/fa-regular-400.0d03b1bb.ttf,1651675812,,404
+3f6b5d,127.0.0.1,GET,https://127.0.0.1:8000/bundles/easyadmin/fonts/fa-solid-900.e615bbcb.ttf,1651675812,48cd5d,404
+48cd5d,127.0.0.1,GET,https://127.0.0.1:8000/bundles/easyadmin/fonts/fa-solid-900.e615bbcb.ttf,1651675812,,404

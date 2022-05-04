@@ -8,12 +8,13 @@ use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 
 /**
- * This class is automatically generated to help creating config.
+ * This class is automatically generated to help in creating a config.
  */
 class ExcludedHttpCodeConfig 
 {
     private $code;
     private $urls;
+    private $_usedProperties = [];
     
     /**
      * @default null
@@ -22,6 +23,7 @@ class ExcludedHttpCodeConfig
      */
     public function code($value): self
     {
+        $this->_usedProperties['code'] = true;
         $this->code = $value;
     
         return $this;
@@ -33,6 +35,7 @@ class ExcludedHttpCodeConfig
      */
     public function urls($value): self
     {
+        $this->_usedProperties['urls'] = true;
         $this->urls = $value;
     
         return $this;
@@ -41,12 +44,14 @@ class ExcludedHttpCodeConfig
     public function __construct(array $value = [])
     {
     
-        if (isset($value['code'])) {
+        if (array_key_exists('code', $value)) {
+            $this->_usedProperties['code'] = true;
             $this->code = $value['code'];
             unset($value['code']);
         }
     
-        if (isset($value['urls'])) {
+        if (array_key_exists('urls', $value)) {
+            $this->_usedProperties['urls'] = true;
             $this->urls = $value['urls'];
             unset($value['urls']);
         }
@@ -59,10 +64,10 @@ class ExcludedHttpCodeConfig
     public function toArray(): array
     {
         $output = [];
-        if (null !== $this->code) {
+        if (isset($this->_usedProperties['code'])) {
             $output['code'] = $this->code;
         }
-        if (null !== $this->urls) {
+        if (isset($this->_usedProperties['urls'])) {
             $output['urls'] = $this->urls;
         }
     

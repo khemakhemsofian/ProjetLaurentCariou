@@ -49,18 +49,25 @@ class DesignRepository extends ServiceEntityRepository
       * @return Design[] Returns an array of Design objects
       */
     
-    public function findByDesignId($value=0)
+    public function findByDesignCategorie($value)
     {
-        
-        return $this->createQueryBuilder('d')
-            ->orderBy('d.id', 'DESC')
+     
+       $qb= $this->createQueryBuilder('d');
+            if ($value) {
+                $qb->join('d.categorie', 'dc')
+                ->where('dc.categorieName= :val')
+                ->setParameter('val',$value);
+            }
+            $qb->orderBy('d.id', 'DESC')
             ->setFirstResult($value)
-            ->setMaxResults(4)
-            ->getQuery()
+            ->setMaxResults(4);
+          return  $qb->getQuery()
             ->getResult()
         ;
+        
     }
     
+
 
     /*
     public function findOneBySomeField($value): ?Design

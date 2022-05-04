@@ -9,7 +9,7 @@ use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 
 /**
- * This class is automatically generated to help creating config.
+ * This class is automatically generated to help in creating a config.
  */
 class RememberMeConfig 
 {
@@ -29,6 +29,7 @@ class RememberMeConfig
     private $samesite;
     private $alwaysRememberMe;
     private $rememberMeParameter;
+    private $_usedProperties = [];
     
     /**
      * @default null
@@ -37,6 +38,7 @@ class RememberMeConfig
      */
     public function secret($value): self
     {
+        $this->_usedProperties['secret'] = true;
         $this->secret = $value;
     
         return $this;
@@ -49,6 +51,7 @@ class RememberMeConfig
      */
     public function service($value): self
     {
+        $this->_usedProperties['service'] = true;
         $this->service = $value;
     
         return $this;
@@ -60,6 +63,7 @@ class RememberMeConfig
      */
     public function userProviders($value): self
     {
+        $this->_usedProperties['userProviders'] = true;
         $this->userProviders = $value;
     
         return $this;
@@ -72,6 +76,7 @@ class RememberMeConfig
      */
     public function catchExceptions($value): self
     {
+        $this->_usedProperties['catchExceptions'] = true;
         $this->catchExceptions = $value;
     
         return $this;
@@ -83,6 +88,7 @@ class RememberMeConfig
      */
     public function signatureProperties($value): self
     {
+        $this->_usedProperties['signatureProperties'] = true;
         $this->signatureProperties = $value;
     
         return $this;
@@ -91,6 +97,7 @@ class RememberMeConfig
     public function tokenProvider(array $value = []): \Symfony\Config\Security\FirewallConfig\RememberMe\TokenProviderConfig
     {
         if (null === $this->tokenProvider) {
+            $this->_usedProperties['tokenProvider'] = true;
             $this->tokenProvider = new \Symfony\Config\Security\FirewallConfig\RememberMe\TokenProviderConfig($value);
         } elseif ([] !== $value) {
             throw new InvalidConfigurationException('The node created by "tokenProvider()" has already been initialized. You cannot pass values the second time you call tokenProvider().');
@@ -107,6 +114,7 @@ class RememberMeConfig
      */
     public function tokenVerifier($value): self
     {
+        $this->_usedProperties['tokenVerifier'] = true;
         $this->tokenVerifier = $value;
     
         return $this;
@@ -119,6 +127,7 @@ class RememberMeConfig
      */
     public function name($value): self
     {
+        $this->_usedProperties['name'] = true;
         $this->name = $value;
     
         return $this;
@@ -131,6 +140,7 @@ class RememberMeConfig
      */
     public function lifetime($value): self
     {
+        $this->_usedProperties['lifetime'] = true;
         $this->lifetime = $value;
     
         return $this;
@@ -143,6 +153,7 @@ class RememberMeConfig
      */
     public function path($value): self
     {
+        $this->_usedProperties['path'] = true;
         $this->path = $value;
     
         return $this;
@@ -155,6 +166,7 @@ class RememberMeConfig
      */
     public function domain($value): self
     {
+        $this->_usedProperties['domain'] = true;
         $this->domain = $value;
     
         return $this;
@@ -167,6 +179,7 @@ class RememberMeConfig
      */
     public function secure($value): self
     {
+        $this->_usedProperties['secure'] = true;
         $this->secure = $value;
     
         return $this;
@@ -179,6 +192,7 @@ class RememberMeConfig
      */
     public function httponly($value): self
     {
+        $this->_usedProperties['httponly'] = true;
         $this->httponly = $value;
     
         return $this;
@@ -191,6 +205,7 @@ class RememberMeConfig
      */
     public function samesite($value): self
     {
+        $this->_usedProperties['samesite'] = true;
         $this->samesite = $value;
     
         return $this;
@@ -203,6 +218,7 @@ class RememberMeConfig
      */
     public function alwaysRememberMe($value): self
     {
+        $this->_usedProperties['alwaysRememberMe'] = true;
         $this->alwaysRememberMe = $value;
     
         return $this;
@@ -215,6 +231,7 @@ class RememberMeConfig
      */
     public function rememberMeParameter($value): self
     {
+        $this->_usedProperties['rememberMeParameter'] = true;
         $this->rememberMeParameter = $value;
     
         return $this;
@@ -223,82 +240,98 @@ class RememberMeConfig
     public function __construct(array $value = [])
     {
     
-        if (isset($value['secret'])) {
+        if (array_key_exists('secret', $value)) {
+            $this->_usedProperties['secret'] = true;
             $this->secret = $value['secret'];
             unset($value['secret']);
         }
     
-        if (isset($value['service'])) {
+        if (array_key_exists('service', $value)) {
+            $this->_usedProperties['service'] = true;
             $this->service = $value['service'];
             unset($value['service']);
         }
     
-        if (isset($value['user_providers'])) {
+        if (array_key_exists('user_providers', $value)) {
+            $this->_usedProperties['userProviders'] = true;
             $this->userProviders = $value['user_providers'];
             unset($value['user_providers']);
         }
     
-        if (isset($value['catch_exceptions'])) {
+        if (array_key_exists('catch_exceptions', $value)) {
+            $this->_usedProperties['catchExceptions'] = true;
             $this->catchExceptions = $value['catch_exceptions'];
             unset($value['catch_exceptions']);
         }
     
-        if (isset($value['signature_properties'])) {
+        if (array_key_exists('signature_properties', $value)) {
+            $this->_usedProperties['signatureProperties'] = true;
             $this->signatureProperties = $value['signature_properties'];
             unset($value['signature_properties']);
         }
     
-        if (isset($value['token_provider'])) {
+        if (array_key_exists('token_provider', $value)) {
+            $this->_usedProperties['tokenProvider'] = true;
             $this->tokenProvider = new \Symfony\Config\Security\FirewallConfig\RememberMe\TokenProviderConfig($value['token_provider']);
             unset($value['token_provider']);
         }
     
-        if (isset($value['token_verifier'])) {
+        if (array_key_exists('token_verifier', $value)) {
+            $this->_usedProperties['tokenVerifier'] = true;
             $this->tokenVerifier = $value['token_verifier'];
             unset($value['token_verifier']);
         }
     
-        if (isset($value['name'])) {
+        if (array_key_exists('name', $value)) {
+            $this->_usedProperties['name'] = true;
             $this->name = $value['name'];
             unset($value['name']);
         }
     
-        if (isset($value['lifetime'])) {
+        if (array_key_exists('lifetime', $value)) {
+            $this->_usedProperties['lifetime'] = true;
             $this->lifetime = $value['lifetime'];
             unset($value['lifetime']);
         }
     
-        if (isset($value['path'])) {
+        if (array_key_exists('path', $value)) {
+            $this->_usedProperties['path'] = true;
             $this->path = $value['path'];
             unset($value['path']);
         }
     
-        if (isset($value['domain'])) {
+        if (array_key_exists('domain', $value)) {
+            $this->_usedProperties['domain'] = true;
             $this->domain = $value['domain'];
             unset($value['domain']);
         }
     
-        if (isset($value['secure'])) {
+        if (array_key_exists('secure', $value)) {
+            $this->_usedProperties['secure'] = true;
             $this->secure = $value['secure'];
             unset($value['secure']);
         }
     
-        if (isset($value['httponly'])) {
+        if (array_key_exists('httponly', $value)) {
+            $this->_usedProperties['httponly'] = true;
             $this->httponly = $value['httponly'];
             unset($value['httponly']);
         }
     
-        if (isset($value['samesite'])) {
+        if (array_key_exists('samesite', $value)) {
+            $this->_usedProperties['samesite'] = true;
             $this->samesite = $value['samesite'];
             unset($value['samesite']);
         }
     
-        if (isset($value['always_remember_me'])) {
+        if (array_key_exists('always_remember_me', $value)) {
+            $this->_usedProperties['alwaysRememberMe'] = true;
             $this->alwaysRememberMe = $value['always_remember_me'];
             unset($value['always_remember_me']);
         }
     
-        if (isset($value['remember_me_parameter'])) {
+        if (array_key_exists('remember_me_parameter', $value)) {
+            $this->_usedProperties['rememberMeParameter'] = true;
             $this->rememberMeParameter = $value['remember_me_parameter'];
             unset($value['remember_me_parameter']);
         }
@@ -311,52 +344,52 @@ class RememberMeConfig
     public function toArray(): array
     {
         $output = [];
-        if (null !== $this->secret) {
+        if (isset($this->_usedProperties['secret'])) {
             $output['secret'] = $this->secret;
         }
-        if (null !== $this->service) {
+        if (isset($this->_usedProperties['service'])) {
             $output['service'] = $this->service;
         }
-        if (null !== $this->userProviders) {
+        if (isset($this->_usedProperties['userProviders'])) {
             $output['user_providers'] = $this->userProviders;
         }
-        if (null !== $this->catchExceptions) {
+        if (isset($this->_usedProperties['catchExceptions'])) {
             $output['catch_exceptions'] = $this->catchExceptions;
         }
-        if (null !== $this->signatureProperties) {
+        if (isset($this->_usedProperties['signatureProperties'])) {
             $output['signature_properties'] = $this->signatureProperties;
         }
-        if (null !== $this->tokenProvider) {
+        if (isset($this->_usedProperties['tokenProvider'])) {
             $output['token_provider'] = $this->tokenProvider->toArray();
         }
-        if (null !== $this->tokenVerifier) {
+        if (isset($this->_usedProperties['tokenVerifier'])) {
             $output['token_verifier'] = $this->tokenVerifier;
         }
-        if (null !== $this->name) {
+        if (isset($this->_usedProperties['name'])) {
             $output['name'] = $this->name;
         }
-        if (null !== $this->lifetime) {
+        if (isset($this->_usedProperties['lifetime'])) {
             $output['lifetime'] = $this->lifetime;
         }
-        if (null !== $this->path) {
+        if (isset($this->_usedProperties['path'])) {
             $output['path'] = $this->path;
         }
-        if (null !== $this->domain) {
+        if (isset($this->_usedProperties['domain'])) {
             $output['domain'] = $this->domain;
         }
-        if (null !== $this->secure) {
+        if (isset($this->_usedProperties['secure'])) {
             $output['secure'] = $this->secure;
         }
-        if (null !== $this->httponly) {
+        if (isset($this->_usedProperties['httponly'])) {
             $output['httponly'] = $this->httponly;
         }
-        if (null !== $this->samesite) {
+        if (isset($this->_usedProperties['samesite'])) {
             $output['samesite'] = $this->samesite;
         }
-        if (null !== $this->alwaysRememberMe) {
+        if (isset($this->_usedProperties['alwaysRememberMe'])) {
             $output['always_remember_me'] = $this->alwaysRememberMe;
         }
-        if (null !== $this->rememberMeParameter) {
+        if (isset($this->_usedProperties['rememberMeParameter'])) {
             $output['remember_me_parameter'] = $this->rememberMeParameter;
         }
     

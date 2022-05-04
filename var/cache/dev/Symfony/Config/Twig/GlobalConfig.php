@@ -8,13 +8,14 @@ use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 
 /**
- * This class is automatically generated to help creating config.
+ * This class is automatically generated to help in creating a config.
  */
 class GlobalConfig 
 {
     private $id;
     private $type;
     private $value;
+    private $_usedProperties = [];
     
     /**
      * @default null
@@ -23,6 +24,7 @@ class GlobalConfig
      */
     public function id($value): self
     {
+        $this->_usedProperties['id'] = true;
         $this->id = $value;
     
         return $this;
@@ -35,6 +37,7 @@ class GlobalConfig
      */
     public function type($value): self
     {
+        $this->_usedProperties['type'] = true;
         $this->type = $value;
     
         return $this;
@@ -47,6 +50,7 @@ class GlobalConfig
      */
     public function value($value): self
     {
+        $this->_usedProperties['value'] = true;
         $this->value = $value;
     
         return $this;
@@ -55,17 +59,20 @@ class GlobalConfig
     public function __construct(array $value = [])
     {
     
-        if (isset($value['id'])) {
+        if (array_key_exists('id', $value)) {
+            $this->_usedProperties['id'] = true;
             $this->id = $value['id'];
             unset($value['id']);
         }
     
-        if (isset($value['type'])) {
+        if (array_key_exists('type', $value)) {
+            $this->_usedProperties['type'] = true;
             $this->type = $value['type'];
             unset($value['type']);
         }
     
-        if (isset($value['value'])) {
+        if (array_key_exists('value', $value)) {
+            $this->_usedProperties['value'] = true;
             $this->value = $value['value'];
             unset($value['value']);
         }
@@ -78,13 +85,13 @@ class GlobalConfig
     public function toArray(): array
     {
         $output = [];
-        if (null !== $this->id) {
+        if (isset($this->_usedProperties['id'])) {
             $output['id'] = $this->id;
         }
-        if (null !== $this->type) {
+        if (isset($this->_usedProperties['type'])) {
             $output['type'] = $this->type;
         }
-        if (null !== $this->value) {
+        if (isset($this->_usedProperties['value'])) {
             $output['value'] = $this->value;
         }
     

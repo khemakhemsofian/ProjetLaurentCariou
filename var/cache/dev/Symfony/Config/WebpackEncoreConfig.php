@@ -8,7 +8,7 @@ use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 
 /**
- * This class is automatically generated to help creating config.
+ * This class is automatically generated to help in creating a config.
  */
 class WebpackEncoreConfig implements \Symfony\Component\Config\Builder\ConfigBuilderInterface
 {
@@ -20,6 +20,7 @@ class WebpackEncoreConfig implements \Symfony\Component\Config\Builder\ConfigBui
     private $builds;
     private $scriptAttributes;
     private $linkAttributes;
+    private $_usedProperties = [];
     
     /**
      * The path where Encore is building the assets - i.e. Encore.setOutputPath()
@@ -29,6 +30,7 @@ class WebpackEncoreConfig implements \Symfony\Component\Config\Builder\ConfigBui
      */
     public function outputPath($value): self
     {
+        $this->_usedProperties['outputPath'] = true;
         $this->outputPath = $value;
     
         return $this;
@@ -42,6 +44,7 @@ class WebpackEncoreConfig implements \Symfony\Component\Config\Builder\ConfigBui
      */
     public function crossorigin($value): self
     {
+        $this->_usedProperties['crossorigin'] = true;
         $this->crossorigin = $value;
     
         return $this;
@@ -55,6 +58,7 @@ class WebpackEncoreConfig implements \Symfony\Component\Config\Builder\ConfigBui
      */
     public function preload($value): self
     {
+        $this->_usedProperties['preload'] = true;
         $this->preload = $value;
     
         return $this;
@@ -68,6 +72,7 @@ class WebpackEncoreConfig implements \Symfony\Component\Config\Builder\ConfigBui
      */
     public function cache($value): self
     {
+        $this->_usedProperties['cache'] = true;
         $this->cache = $value;
     
         return $this;
@@ -81,6 +86,7 @@ class WebpackEncoreConfig implements \Symfony\Component\Config\Builder\ConfigBui
      */
     public function strictMode($value): self
     {
+        $this->_usedProperties['strictMode'] = true;
         $this->strictMode = $value;
     
         return $this;
@@ -92,6 +98,7 @@ class WebpackEncoreConfig implements \Symfony\Component\Config\Builder\ConfigBui
      */
     public function builds(string $name, $value): self
     {
+        $this->_usedProperties['builds'] = true;
         $this->builds[$name] = $value;
     
         return $this;
@@ -103,6 +110,7 @@ class WebpackEncoreConfig implements \Symfony\Component\Config\Builder\ConfigBui
      */
     public function scriptAttributes(string $name, $value): self
     {
+        $this->_usedProperties['scriptAttributes'] = true;
         $this->scriptAttributes[$name] = $value;
     
         return $this;
@@ -114,6 +122,7 @@ class WebpackEncoreConfig implements \Symfony\Component\Config\Builder\ConfigBui
      */
     public function linkAttributes(string $name, $value): self
     {
+        $this->_usedProperties['linkAttributes'] = true;
         $this->linkAttributes[$name] = $value;
     
         return $this;
@@ -127,42 +136,50 @@ class WebpackEncoreConfig implements \Symfony\Component\Config\Builder\ConfigBui
     public function __construct(array $value = [])
     {
     
-        if (isset($value['output_path'])) {
+        if (array_key_exists('output_path', $value)) {
+            $this->_usedProperties['outputPath'] = true;
             $this->outputPath = $value['output_path'];
             unset($value['output_path']);
         }
     
-        if (isset($value['crossorigin'])) {
+        if (array_key_exists('crossorigin', $value)) {
+            $this->_usedProperties['crossorigin'] = true;
             $this->crossorigin = $value['crossorigin'];
             unset($value['crossorigin']);
         }
     
-        if (isset($value['preload'])) {
+        if (array_key_exists('preload', $value)) {
+            $this->_usedProperties['preload'] = true;
             $this->preload = $value['preload'];
             unset($value['preload']);
         }
     
-        if (isset($value['cache'])) {
+        if (array_key_exists('cache', $value)) {
+            $this->_usedProperties['cache'] = true;
             $this->cache = $value['cache'];
             unset($value['cache']);
         }
     
-        if (isset($value['strict_mode'])) {
+        if (array_key_exists('strict_mode', $value)) {
+            $this->_usedProperties['strictMode'] = true;
             $this->strictMode = $value['strict_mode'];
             unset($value['strict_mode']);
         }
     
-        if (isset($value['builds'])) {
+        if (array_key_exists('builds', $value)) {
+            $this->_usedProperties['builds'] = true;
             $this->builds = $value['builds'];
             unset($value['builds']);
         }
     
-        if (isset($value['script_attributes'])) {
+        if (array_key_exists('script_attributes', $value)) {
+            $this->_usedProperties['scriptAttributes'] = true;
             $this->scriptAttributes = $value['script_attributes'];
             unset($value['script_attributes']);
         }
     
-        if (isset($value['link_attributes'])) {
+        if (array_key_exists('link_attributes', $value)) {
+            $this->_usedProperties['linkAttributes'] = true;
             $this->linkAttributes = $value['link_attributes'];
             unset($value['link_attributes']);
         }
@@ -175,28 +192,28 @@ class WebpackEncoreConfig implements \Symfony\Component\Config\Builder\ConfigBui
     public function toArray(): array
     {
         $output = [];
-        if (null !== $this->outputPath) {
+        if (isset($this->_usedProperties['outputPath'])) {
             $output['output_path'] = $this->outputPath;
         }
-        if (null !== $this->crossorigin) {
+        if (isset($this->_usedProperties['crossorigin'])) {
             $output['crossorigin'] = $this->crossorigin;
         }
-        if (null !== $this->preload) {
+        if (isset($this->_usedProperties['preload'])) {
             $output['preload'] = $this->preload;
         }
-        if (null !== $this->cache) {
+        if (isset($this->_usedProperties['cache'])) {
             $output['cache'] = $this->cache;
         }
-        if (null !== $this->strictMode) {
+        if (isset($this->_usedProperties['strictMode'])) {
             $output['strict_mode'] = $this->strictMode;
         }
-        if (null !== $this->builds) {
+        if (isset($this->_usedProperties['builds'])) {
             $output['builds'] = $this->builds;
         }
-        if (null !== $this->scriptAttributes) {
+        if (isset($this->_usedProperties['scriptAttributes'])) {
             $output['script_attributes'] = $this->scriptAttributes;
         }
-        if (null !== $this->linkAttributes) {
+        if (isset($this->_usedProperties['linkAttributes'])) {
             $output['link_attributes'] = $this->linkAttributes;
         }
     

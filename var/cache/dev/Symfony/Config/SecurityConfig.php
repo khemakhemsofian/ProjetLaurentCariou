@@ -14,7 +14,7 @@ use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 
 /**
- * This class is automatically generated to help creating config.
+ * This class is automatically generated to help in creating a config.
  */
 class SecurityConfig implements \Symfony\Component\Config\Builder\ConfigBuilderInterface
 {
@@ -31,6 +31,7 @@ class SecurityConfig implements \Symfony\Component\Config\Builder\ConfigBuilderI
     private $firewalls;
     private $accessControl;
     private $roleHierarchy;
+    private $_usedProperties = [];
     
     /**
      * @example /foo/error403
@@ -40,6 +41,7 @@ class SecurityConfig implements \Symfony\Component\Config\Builder\ConfigBuilderI
      */
     public function accessDeniedUrl($value): self
     {
+        $this->_usedProperties['accessDeniedUrl'] = true;
         $this->accessDeniedUrl = $value;
     
         return $this;
@@ -52,6 +54,7 @@ class SecurityConfig implements \Symfony\Component\Config\Builder\ConfigBuilderI
      */
     public function sessionFixationStrategy($value): self
     {
+        $this->_usedProperties['sessionFixationStrategy'] = true;
         $this->sessionFixationStrategy = $value;
     
         return $this;
@@ -64,6 +67,7 @@ class SecurityConfig implements \Symfony\Component\Config\Builder\ConfigBuilderI
      */
     public function hideUserNotFound($value): self
     {
+        $this->_usedProperties['hideUserNotFound'] = true;
         $this->hideUserNotFound = $value;
     
         return $this;
@@ -77,6 +81,7 @@ class SecurityConfig implements \Symfony\Component\Config\Builder\ConfigBuilderI
      */
     public function alwaysAuthenticateBeforeGranting($value): self
     {
+        $this->_usedProperties['alwaysAuthenticateBeforeGranting'] = true;
         $this->alwaysAuthenticateBeforeGranting = $value;
     
         return $this;
@@ -89,6 +94,7 @@ class SecurityConfig implements \Symfony\Component\Config\Builder\ConfigBuilderI
      */
     public function eraseCredentials($value): self
     {
+        $this->_usedProperties['eraseCredentials'] = true;
         $this->eraseCredentials = $value;
     
         return $this;
@@ -102,6 +108,7 @@ class SecurityConfig implements \Symfony\Component\Config\Builder\ConfigBuilderI
      */
     public function enableAuthenticatorManager($value): self
     {
+        $this->_usedProperties['enableAuthenticatorManager'] = true;
         $this->enableAuthenticatorManager = $value;
     
         return $this;
@@ -110,6 +117,7 @@ class SecurityConfig implements \Symfony\Component\Config\Builder\ConfigBuilderI
     public function accessDecisionManager(array $value = []): \Symfony\Config\Security\AccessDecisionManagerConfig
     {
         if (null === $this->accessDecisionManager) {
+            $this->_usedProperties['accessDecisionManager'] = true;
             $this->accessDecisionManager = new \Symfony\Config\Security\AccessDecisionManagerConfig($value);
         } elseif ([] !== $value) {
             throw new InvalidConfigurationException('The node created by "accessDecisionManager()" has already been initialized. You cannot pass values the second time you call accessDecisionManager().');
@@ -121,6 +129,8 @@ class SecurityConfig implements \Symfony\Component\Config\Builder\ConfigBuilderI
     public function encoder(string $class, array $value = []): \Symfony\Config\Security\EncoderConfig
     {
         if (!isset($this->encoders[$class])) {
+            $this->_usedProperties['encoders'] = true;
+    
             return $this->encoders[$class] = new \Symfony\Config\Security\EncoderConfig($value);
         }
         if ([] === $value) {
@@ -133,6 +143,8 @@ class SecurityConfig implements \Symfony\Component\Config\Builder\ConfigBuilderI
     public function passwordHasher(string $class, array $value = []): \Symfony\Config\Security\PasswordHasherConfig
     {
         if (!isset($this->passwordHashers[$class])) {
+            $this->_usedProperties['passwordHashers'] = true;
+    
             return $this->passwordHashers[$class] = new \Symfony\Config\Security\PasswordHasherConfig($value);
         }
         if ([] === $value) {
@@ -145,6 +157,8 @@ class SecurityConfig implements \Symfony\Component\Config\Builder\ConfigBuilderI
     public function provider(string $name, array $value = []): \Symfony\Config\Security\ProviderConfig
     {
         if (!isset($this->providers[$name])) {
+            $this->_usedProperties['providers'] = true;
+    
             return $this->providers[$name] = new \Symfony\Config\Security\ProviderConfig($value);
         }
         if ([] === $value) {
@@ -157,6 +171,8 @@ class SecurityConfig implements \Symfony\Component\Config\Builder\ConfigBuilderI
     public function firewall(string $name, array $value = []): \Symfony\Config\Security\FirewallConfig
     {
         if (!isset($this->firewalls[$name])) {
+            $this->_usedProperties['firewalls'] = true;
+    
             return $this->firewalls[$name] = new \Symfony\Config\Security\FirewallConfig($value);
         }
         if ([] === $value) {
@@ -168,6 +184,8 @@ class SecurityConfig implements \Symfony\Component\Config\Builder\ConfigBuilderI
     
     public function accessControl(array $value = []): \Symfony\Config\Security\AccessControlConfig
     {
+        $this->_usedProperties['accessControl'] = true;
+    
         return $this->accessControl[] = new \Symfony\Config\Security\AccessControlConfig($value);
     }
     
@@ -177,6 +195,7 @@ class SecurityConfig implements \Symfony\Component\Config\Builder\ConfigBuilderI
      */
     public function roleHierarchy(string $id, $value): self
     {
+        $this->_usedProperties['roleHierarchy'] = true;
         $this->roleHierarchy[$id] = $value;
     
         return $this;
@@ -190,67 +209,80 @@ class SecurityConfig implements \Symfony\Component\Config\Builder\ConfigBuilderI
     public function __construct(array $value = [])
     {
     
-        if (isset($value['access_denied_url'])) {
+        if (array_key_exists('access_denied_url', $value)) {
+            $this->_usedProperties['accessDeniedUrl'] = true;
             $this->accessDeniedUrl = $value['access_denied_url'];
             unset($value['access_denied_url']);
         }
     
-        if (isset($value['session_fixation_strategy'])) {
+        if (array_key_exists('session_fixation_strategy', $value)) {
+            $this->_usedProperties['sessionFixationStrategy'] = true;
             $this->sessionFixationStrategy = $value['session_fixation_strategy'];
             unset($value['session_fixation_strategy']);
         }
     
-        if (isset($value['hide_user_not_found'])) {
+        if (array_key_exists('hide_user_not_found', $value)) {
+            $this->_usedProperties['hideUserNotFound'] = true;
             $this->hideUserNotFound = $value['hide_user_not_found'];
             unset($value['hide_user_not_found']);
         }
     
-        if (isset($value['always_authenticate_before_granting'])) {
+        if (array_key_exists('always_authenticate_before_granting', $value)) {
+            $this->_usedProperties['alwaysAuthenticateBeforeGranting'] = true;
             $this->alwaysAuthenticateBeforeGranting = $value['always_authenticate_before_granting'];
             unset($value['always_authenticate_before_granting']);
         }
     
-        if (isset($value['erase_credentials'])) {
+        if (array_key_exists('erase_credentials', $value)) {
+            $this->_usedProperties['eraseCredentials'] = true;
             $this->eraseCredentials = $value['erase_credentials'];
             unset($value['erase_credentials']);
         }
     
-        if (isset($value['enable_authenticator_manager'])) {
+        if (array_key_exists('enable_authenticator_manager', $value)) {
+            $this->_usedProperties['enableAuthenticatorManager'] = true;
             $this->enableAuthenticatorManager = $value['enable_authenticator_manager'];
             unset($value['enable_authenticator_manager']);
         }
     
-        if (isset($value['access_decision_manager'])) {
+        if (array_key_exists('access_decision_manager', $value)) {
+            $this->_usedProperties['accessDecisionManager'] = true;
             $this->accessDecisionManager = new \Symfony\Config\Security\AccessDecisionManagerConfig($value['access_decision_manager']);
             unset($value['access_decision_manager']);
         }
     
-        if (isset($value['encoders'])) {
+        if (array_key_exists('encoders', $value)) {
+            $this->_usedProperties['encoders'] = true;
             $this->encoders = array_map(function ($v) { return new \Symfony\Config\Security\EncoderConfig($v); }, $value['encoders']);
             unset($value['encoders']);
         }
     
-        if (isset($value['password_hashers'])) {
+        if (array_key_exists('password_hashers', $value)) {
+            $this->_usedProperties['passwordHashers'] = true;
             $this->passwordHashers = array_map(function ($v) { return new \Symfony\Config\Security\PasswordHasherConfig($v); }, $value['password_hashers']);
             unset($value['password_hashers']);
         }
     
-        if (isset($value['providers'])) {
+        if (array_key_exists('providers', $value)) {
+            $this->_usedProperties['providers'] = true;
             $this->providers = array_map(function ($v) { return new \Symfony\Config\Security\ProviderConfig($v); }, $value['providers']);
             unset($value['providers']);
         }
     
-        if (isset($value['firewalls'])) {
+        if (array_key_exists('firewalls', $value)) {
+            $this->_usedProperties['firewalls'] = true;
             $this->firewalls = array_map(function ($v) { return new \Symfony\Config\Security\FirewallConfig($v); }, $value['firewalls']);
             unset($value['firewalls']);
         }
     
-        if (isset($value['access_control'])) {
+        if (array_key_exists('access_control', $value)) {
+            $this->_usedProperties['accessControl'] = true;
             $this->accessControl = array_map(function ($v) { return new \Symfony\Config\Security\AccessControlConfig($v); }, $value['access_control']);
             unset($value['access_control']);
         }
     
-        if (isset($value['role_hierarchy'])) {
+        if (array_key_exists('role_hierarchy', $value)) {
+            $this->_usedProperties['roleHierarchy'] = true;
             $this->roleHierarchy = $value['role_hierarchy'];
             unset($value['role_hierarchy']);
         }
@@ -263,43 +295,43 @@ class SecurityConfig implements \Symfony\Component\Config\Builder\ConfigBuilderI
     public function toArray(): array
     {
         $output = [];
-        if (null !== $this->accessDeniedUrl) {
+        if (isset($this->_usedProperties['accessDeniedUrl'])) {
             $output['access_denied_url'] = $this->accessDeniedUrl;
         }
-        if (null !== $this->sessionFixationStrategy) {
+        if (isset($this->_usedProperties['sessionFixationStrategy'])) {
             $output['session_fixation_strategy'] = $this->sessionFixationStrategy;
         }
-        if (null !== $this->hideUserNotFound) {
+        if (isset($this->_usedProperties['hideUserNotFound'])) {
             $output['hide_user_not_found'] = $this->hideUserNotFound;
         }
-        if (null !== $this->alwaysAuthenticateBeforeGranting) {
+        if (isset($this->_usedProperties['alwaysAuthenticateBeforeGranting'])) {
             $output['always_authenticate_before_granting'] = $this->alwaysAuthenticateBeforeGranting;
         }
-        if (null !== $this->eraseCredentials) {
+        if (isset($this->_usedProperties['eraseCredentials'])) {
             $output['erase_credentials'] = $this->eraseCredentials;
         }
-        if (null !== $this->enableAuthenticatorManager) {
+        if (isset($this->_usedProperties['enableAuthenticatorManager'])) {
             $output['enable_authenticator_manager'] = $this->enableAuthenticatorManager;
         }
-        if (null !== $this->accessDecisionManager) {
+        if (isset($this->_usedProperties['accessDecisionManager'])) {
             $output['access_decision_manager'] = $this->accessDecisionManager->toArray();
         }
-        if (null !== $this->encoders) {
+        if (isset($this->_usedProperties['encoders'])) {
             $output['encoders'] = array_map(function ($v) { return $v->toArray(); }, $this->encoders);
         }
-        if (null !== $this->passwordHashers) {
+        if (isset($this->_usedProperties['passwordHashers'])) {
             $output['password_hashers'] = array_map(function ($v) { return $v->toArray(); }, $this->passwordHashers);
         }
-        if (null !== $this->providers) {
+        if (isset($this->_usedProperties['providers'])) {
             $output['providers'] = array_map(function ($v) { return $v->toArray(); }, $this->providers);
         }
-        if (null !== $this->firewalls) {
+        if (isset($this->_usedProperties['firewalls'])) {
             $output['firewalls'] = array_map(function ($v) { return $v->toArray(); }, $this->firewalls);
         }
-        if (null !== $this->accessControl) {
+        if (isset($this->_usedProperties['accessControl'])) {
             $output['access_control'] = array_map(function ($v) { return $v->toArray(); }, $this->accessControl);
         }
-        if (null !== $this->roleHierarchy) {
+        if (isset($this->_usedProperties['roleHierarchy'])) {
             $output['role_hierarchy'] = $this->roleHierarchy;
         }
     

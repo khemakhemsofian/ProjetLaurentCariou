@@ -31,7 +31,7 @@
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             <li><a class="dropdown-item" href={{path("app_design")}}>Tous les design</a></li>
            {% for Design in DesignCategorieList %}
-                <li><a href="{{path('app_design',{id:Design.id})}}" class="dropdown-item">{{Design.categorieName}}</a></li>
+                <li><a href="{{path('app_design',{categorieName:Design.categorieName})}}" class="dropdown-item">{{Design.categorieName}}</a></li>
             {% endfor %}
           </ul>
         </li>

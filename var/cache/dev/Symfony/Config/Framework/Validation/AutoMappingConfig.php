@@ -8,11 +8,12 @@ use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 
 /**
- * This class is automatically generated to help creating config.
+ * This class is automatically generated to help in creating a config.
  */
 class AutoMappingConfig 
 {
     private $services;
+    private $_usedProperties = [];
     
     /**
      * @param ParamConfigurator|list<mixed|ParamConfigurator> $value
@@ -20,6 +21,7 @@ class AutoMappingConfig
      */
     public function services($value): self
     {
+        $this->_usedProperties['services'] = true;
         $this->services = $value;
     
         return $this;
@@ -28,7 +30,8 @@ class AutoMappingConfig
     public function __construct(array $value = [])
     {
     
-        if (isset($value['services'])) {
+        if (array_key_exists('services', $value)) {
+            $this->_usedProperties['services'] = true;
             $this->services = $value['services'];
             unset($value['services']);
         }
@@ -41,7 +44,7 @@ class AutoMappingConfig
     public function toArray(): array
     {
         $output = [];
-        if (null !== $this->services) {
+        if (isset($this->_usedProperties['services'])) {
             $output['services'] = $this->services;
         }
     

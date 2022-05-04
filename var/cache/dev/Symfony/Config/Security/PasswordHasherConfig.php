@@ -8,7 +8,7 @@ use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 
 /**
- * This class is automatically generated to help creating config.
+ * This class is automatically generated to help in creating a config.
  */
 class PasswordHasherConfig 
 {
@@ -23,6 +23,7 @@ class PasswordHasherConfig
     private $memoryCost;
     private $timeCost;
     private $id;
+    private $_usedProperties = [];
     
     /**
      * @default null
@@ -31,6 +32,7 @@ class PasswordHasherConfig
      */
     public function algorithm($value): self
     {
+        $this->_usedProperties['algorithm'] = true;
         $this->algorithm = $value;
     
         return $this;
@@ -42,6 +44,7 @@ class PasswordHasherConfig
      */
     public function migrateFrom($value): self
     {
+        $this->_usedProperties['migrateFrom'] = true;
         $this->migrateFrom = $value;
     
         return $this;
@@ -55,6 +58,7 @@ class PasswordHasherConfig
      */
     public function hashAlgorithm($value): self
     {
+        $this->_usedProperties['hashAlgorithm'] = true;
         $this->hashAlgorithm = $value;
     
         return $this;
@@ -67,6 +71,7 @@ class PasswordHasherConfig
      */
     public function keyLength($value): self
     {
+        $this->_usedProperties['keyLength'] = true;
         $this->keyLength = $value;
     
         return $this;
@@ -79,6 +84,7 @@ class PasswordHasherConfig
      */
     public function ignoreCase($value): self
     {
+        $this->_usedProperties['ignoreCase'] = true;
         $this->ignoreCase = $value;
     
         return $this;
@@ -91,6 +97,7 @@ class PasswordHasherConfig
      */
     public function encodeAsBase64($value): self
     {
+        $this->_usedProperties['encodeAsBase64'] = true;
         $this->encodeAsBase64 = $value;
     
         return $this;
@@ -103,6 +110,7 @@ class PasswordHasherConfig
      */
     public function iterations($value): self
     {
+        $this->_usedProperties['iterations'] = true;
         $this->iterations = $value;
     
         return $this;
@@ -115,6 +123,7 @@ class PasswordHasherConfig
      */
     public function cost($value): self
     {
+        $this->_usedProperties['cost'] = true;
         $this->cost = $value;
     
         return $this;
@@ -127,6 +136,7 @@ class PasswordHasherConfig
      */
     public function memoryCost($value): self
     {
+        $this->_usedProperties['memoryCost'] = true;
         $this->memoryCost = $value;
     
         return $this;
@@ -139,6 +149,7 @@ class PasswordHasherConfig
      */
     public function timeCost($value): self
     {
+        $this->_usedProperties['timeCost'] = true;
         $this->timeCost = $value;
     
         return $this;
@@ -151,6 +162,7 @@ class PasswordHasherConfig
      */
     public function id($value): self
     {
+        $this->_usedProperties['id'] = true;
         $this->id = $value;
     
         return $this;
@@ -159,57 +171,68 @@ class PasswordHasherConfig
     public function __construct(array $value = [])
     {
     
-        if (isset($value['algorithm'])) {
+        if (array_key_exists('algorithm', $value)) {
+            $this->_usedProperties['algorithm'] = true;
             $this->algorithm = $value['algorithm'];
             unset($value['algorithm']);
         }
     
-        if (isset($value['migrate_from'])) {
+        if (array_key_exists('migrate_from', $value)) {
+            $this->_usedProperties['migrateFrom'] = true;
             $this->migrateFrom = $value['migrate_from'];
             unset($value['migrate_from']);
         }
     
-        if (isset($value['hash_algorithm'])) {
+        if (array_key_exists('hash_algorithm', $value)) {
+            $this->_usedProperties['hashAlgorithm'] = true;
             $this->hashAlgorithm = $value['hash_algorithm'];
             unset($value['hash_algorithm']);
         }
     
-        if (isset($value['key_length'])) {
+        if (array_key_exists('key_length', $value)) {
+            $this->_usedProperties['keyLength'] = true;
             $this->keyLength = $value['key_length'];
             unset($value['key_length']);
         }
     
-        if (isset($value['ignore_case'])) {
+        if (array_key_exists('ignore_case', $value)) {
+            $this->_usedProperties['ignoreCase'] = true;
             $this->ignoreCase = $value['ignore_case'];
             unset($value['ignore_case']);
         }
     
-        if (isset($value['encode_as_base64'])) {
+        if (array_key_exists('encode_as_base64', $value)) {
+            $this->_usedProperties['encodeAsBase64'] = true;
             $this->encodeAsBase64 = $value['encode_as_base64'];
             unset($value['encode_as_base64']);
         }
     
-        if (isset($value['iterations'])) {
+        if (array_key_exists('iterations', $value)) {
+            $this->_usedProperties['iterations'] = true;
             $this->iterations = $value['iterations'];
             unset($value['iterations']);
         }
     
-        if (isset($value['cost'])) {
+        if (array_key_exists('cost', $value)) {
+            $this->_usedProperties['cost'] = true;
             $this->cost = $value['cost'];
             unset($value['cost']);
         }
     
-        if (isset($value['memory_cost'])) {
+        if (array_key_exists('memory_cost', $value)) {
+            $this->_usedProperties['memoryCost'] = true;
             $this->memoryCost = $value['memory_cost'];
             unset($value['memory_cost']);
         }
     
-        if (isset($value['time_cost'])) {
+        if (array_key_exists('time_cost', $value)) {
+            $this->_usedProperties['timeCost'] = true;
             $this->timeCost = $value['time_cost'];
             unset($value['time_cost']);
         }
     
-        if (isset($value['id'])) {
+        if (array_key_exists('id', $value)) {
+            $this->_usedProperties['id'] = true;
             $this->id = $value['id'];
             unset($value['id']);
         }
@@ -222,37 +245,37 @@ class PasswordHasherConfig
     public function toArray(): array
     {
         $output = [];
-        if (null !== $this->algorithm) {
+        if (isset($this->_usedProperties['algorithm'])) {
             $output['algorithm'] = $this->algorithm;
         }
-        if (null !== $this->migrateFrom) {
+        if (isset($this->_usedProperties['migrateFrom'])) {
             $output['migrate_from'] = $this->migrateFrom;
         }
-        if (null !== $this->hashAlgorithm) {
+        if (isset($this->_usedProperties['hashAlgorithm'])) {
             $output['hash_algorithm'] = $this->hashAlgorithm;
         }
-        if (null !== $this->keyLength) {
+        if (isset($this->_usedProperties['keyLength'])) {
             $output['key_length'] = $this->keyLength;
         }
-        if (null !== $this->ignoreCase) {
+        if (isset($this->_usedProperties['ignoreCase'])) {
             $output['ignore_case'] = $this->ignoreCase;
         }
-        if (null !== $this->encodeAsBase64) {
+        if (isset($this->_usedProperties['encodeAsBase64'])) {
             $output['encode_as_base64'] = $this->encodeAsBase64;
         }
-        if (null !== $this->iterations) {
+        if (isset($this->_usedProperties['iterations'])) {
             $output['iterations'] = $this->iterations;
         }
-        if (null !== $this->cost) {
+        if (isset($this->_usedProperties['cost'])) {
             $output['cost'] = $this->cost;
         }
-        if (null !== $this->memoryCost) {
+        if (isset($this->_usedProperties['memoryCost'])) {
             $output['memory_cost'] = $this->memoryCost;
         }
-        if (null !== $this->timeCost) {
+        if (isset($this->_usedProperties['timeCost'])) {
             $output['time_cost'] = $this->timeCost;
         }
-        if (null !== $this->id) {
+        if (isset($this->_usedProperties['id'])) {
             $output['id'] = $this->id;
         }
     

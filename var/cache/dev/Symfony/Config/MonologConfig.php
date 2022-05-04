@@ -9,13 +9,14 @@ use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 
 /**
- * This class is automatically generated to help creating config.
+ * This class is automatically generated to help in creating a config.
  */
 class MonologConfig implements \Symfony\Component\Config\Builder\ConfigBuilderInterface
 {
     private $useMicroseconds;
     private $channels;
     private $handlers;
+    private $_usedProperties = [];
     
     /**
      * @default true
@@ -24,6 +25,7 @@ class MonologConfig implements \Symfony\Component\Config\Builder\ConfigBuilderIn
      */
     public function useMicroseconds($value): self
     {
+        $this->_usedProperties['useMicroseconds'] = true;
         $this->useMicroseconds = $value;
     
         return $this;
@@ -35,6 +37,7 @@ class MonologConfig implements \Symfony\Component\Config\Builder\ConfigBuilderIn
      */
     public function channels($value): self
     {
+        $this->_usedProperties['channels'] = true;
         $this->channels = $value;
     
         return $this;
@@ -43,6 +46,8 @@ class MonologConfig implements \Symfony\Component\Config\Builder\ConfigBuilderIn
     public function handler(string $name, array $value = []): \Symfony\Config\Monolog\HandlerConfig
     {
         if (!isset($this->handlers[$name])) {
+            $this->_usedProperties['handlers'] = true;
+    
             return $this->handlers[$name] = new \Symfony\Config\Monolog\HandlerConfig($value);
         }
         if ([] === $value) {
@@ -60,17 +65,20 @@ class MonologConfig implements \Symfony\Component\Config\Builder\ConfigBuilderIn
     public function __construct(array $value = [])
     {
     
-        if (isset($value['use_microseconds'])) {
+        if (array_key_exists('use_microseconds', $value)) {
+            $this->_usedProperties['useMicroseconds'] = true;
             $this->useMicroseconds = $value['use_microseconds'];
             unset($value['use_microseconds']);
         }
     
-        if (isset($value['channels'])) {
+        if (array_key_exists('channels', $value)) {
+            $this->_usedProperties['channels'] = true;
             $this->channels = $value['channels'];
             unset($value['channels']);
         }
     
-        if (isset($value['handlers'])) {
+        if (array_key_exists('handlers', $value)) {
+            $this->_usedProperties['handlers'] = true;
             $this->handlers = array_map(function ($v) { return new \Symfony\Config\Monolog\HandlerConfig($v); }, $value['handlers']);
             unset($value['handlers']);
         }
@@ -83,13 +91,13 @@ class MonologConfig implements \Symfony\Component\Config\Builder\ConfigBuilderIn
     public function toArray(): array
     {
         $output = [];
-        if (null !== $this->useMicroseconds) {
+        if (isset($this->_usedProperties['useMicroseconds'])) {
             $output['use_microseconds'] = $this->useMicroseconds;
         }
-        if (null !== $this->channels) {
+        if (isset($this->_usedProperties['channels'])) {
             $output['channels'] = $this->channels;
         }
-        if (null !== $this->handlers) {
+        if (isset($this->_usedProperties['handlers'])) {
             $output['handlers'] = array_map(function ($v) { return $v->toArray(); }, $this->handlers);
         }
     

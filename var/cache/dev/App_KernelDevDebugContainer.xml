@@ -7552,13 +7552,27 @@
         <argument key="user" type="service_closure" id=".errored..service_locator.q6hA_O0.Symfony\Component\Security\Core\User\UserInterface"/>
       </argument>
     </service>
+    <service id=".service_locator.KyMZEcs" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="manager" type="service_closure" id="doctrine"/>
+      </argument>
+    </service>
+    <service id=".service_locator.9ZfbafG" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="designRepository" type="service_closure" id="App\Repository\DesignRepository"/>
+        <argument key="manager" type="service_closure" id="doctrine"/>
+        <argument key="paginator" type="service_closure" id="knp_paginator"/>
+      </argument>
+    </service>
     <service id=".service_locator.UDgw6Ol" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="authenticationUtils" type="service_closure" id="security.authentication_utils"/>
       </argument>
     </service>
-    <service id=".service_locator.hYnh2I5" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.F7JmU4_" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\AboutController::index" type="service_closure" id=".service_locator.px2rAP."/>
@@ -7711,8 +7725,8 @@
         <argument key="App\Controller\Admin\GraphismCrudController::renderFilters" type="service_closure" id=".service_locator.ZOQ9v2d"/>
         <argument key="App\Controller\Admin\GraphismCrudController::updateEntity" type="service_closure" id=".service_locator.l2QwsaZ"/>
         <argument key="App\Controller\ContactController::index" type="service_closure" id=".service_locator.px2rAP."/>
-        <argument key="App\Controller\DesignCategorieController::index" type="service_closure" id=".service_locator.px2rAP."/>
-        <argument key="App\Controller\DesignController::index" type="service_closure" id=".service_locator.px2rAP."/>
+        <argument key="App\Controller\DesignCategorieController::index" type="service_closure" id=".service_locator.KyMZEcs"/>
+        <argument key="App\Controller\DesignController::index" type="service_closure" id=".service_locator.9ZfbafG"/>
         <argument key="App\Controller\GraphismCategorieController::index" type="service_closure" id=".service_locator.px2rAP."/>
         <argument key="App\Controller\GraphismController::index" type="service_closure" id=".service_locator.px2rAP."/>
         <argument key="App\Controller\MainController::index" type="service_closure" id=".service_locator.px2rAP."/>
@@ -7873,8 +7887,8 @@
         <argument key="App\Controller\Admin\GraphismCrudController:renderFilters" type="service_closure" id=".service_locator.ZOQ9v2d"/>
         <argument key="App\Controller\Admin\GraphismCrudController:updateEntity" type="service_closure" id=".service_locator.l2QwsaZ"/>
         <argument key="App\Controller\ContactController:index" type="service_closure" id=".service_locator.px2rAP."/>
-        <argument key="App\Controller\DesignCategorieController:index" type="service_closure" id=".service_locator.px2rAP."/>
-        <argument key="App\Controller\DesignController:index" type="service_closure" id=".service_locator.px2rAP."/>
+        <argument key="App\Controller\DesignCategorieController:index" type="service_closure" id=".service_locator.KyMZEcs"/>
+        <argument key="App\Controller\DesignController:index" type="service_closure" id=".service_locator.9ZfbafG"/>
         <argument key="App\Controller\GraphismCategorieController:index" type="service_closure" id=".service_locator.px2rAP."/>
         <argument key="App\Controller\GraphismController:index" type="service_closure" id=".service_locator.px2rAP."/>
         <argument key="App\Controller\MainController:index" type="service_closure" id=".service_locator.px2rAP."/>
@@ -8669,12 +8683,12 @@
       <argument type="service" id="EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.hYnh2I5"/>
+      <argument type="service" id=".service_locator.F7JmU4_"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.hYnh2I5"/>
+      <argument type="service" id=".service_locator.F7JmU4_"/>
     </service>
     <service id="debug.traced.messenger.bus.default.inner" class="Symfony\Component\Messenger\MessageBus">
       <argument type="iterator">
@@ -9682,7 +9696,7 @@
     <service id="Knp\Component\Pager\PaginatorInterface" alias="knp_paginator"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.gSv9zYw" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.hYnh2I5"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.F7JmU4_"/>
     <service id="session" alias=".session.do-not-use" public="true">
       <deprecated package="symfony/framework-bundle" version="5.3">The "%alias_id%" service and "SessionInterface" alias are deprecated, use "$requestStack-&gt;getSession()" instead.</deprecated>
     </service>
@@ -9711,7 +9725,9 @@
     <service id=".service_locator.AWPr3oy" alias=".service_locator.Olybskb"/>
     <service id=".service_locator.rAlqQ78" alias=".service_locator.3on9uHL"/>
     <service id=".service_locator.tbo4Jjv" alias=".service_locator.bgO__Zr"/>
-    <service id=".service_locator.rs.Vr.p" alias=".service_locator.hYnh2I5"/>
+    <service id=".service_locator.vCnLS9L" alias=".service_locator.KyMZEcs"/>
+    <service id=".service_locator.pJl837U" alias=".service_locator.9ZfbafG"/>
+    <service id=".service_locator.HxLhX3o" alias=".service_locator.F7JmU4_"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.19_mNxd"/>
     <service id=".service_locator.3l1LkXo" alias=".service_locator.ZWFYuib"/>
     <service id=".service_locator.nk0lT0X" alias=".service_locator.1kmbKC8"/>
@@ -9756,6 +9772,8 @@
     <service id=".service_locator.1tlLxRd" alias=".service_locator.bgO__Zr"/>
     <service id=".service_locator.6KoT76J" alias=".service_locator.2dc0eaX"/>
     <service id=".service_locator.vS1lpro" alias=".service_locator.q6hA_O0"/>
+    <service id=".service_locator.Vdmbu6n" alias=".service_locator.KyMZEcs"/>
+    <service id=".service_locator.q0yZIyv" alias=".service_locator.9ZfbafG"/>
     <service id=".service_locator.kXCVHeG" alias=".service_locator.UDgw6Ol"/>
     <service id=".service_locator.Wd_D6Iy" alias=".service_locator.GNc8e5B"/>
     <service id=".service_locator.4c8pZyi" alias=".service_locator.SoiLYDQ"/>

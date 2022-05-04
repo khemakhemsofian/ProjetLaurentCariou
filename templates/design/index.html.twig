@@ -2,7 +2,7 @@
 
 {% block body %}
 
-		<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+		{# <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
 			<div class="carousel-inner">
 				<div class="carousel-item active">
                {% for AnnonceDesign in DesignList %}
@@ -20,6 +20,16 @@
 				<span class="carousel-control-next-icon" aria-hidden="true"></span>
 				<span class="visually-hidden">Next</span>
 			</button>
+		</div> #}
+		<div class="d-flex justify-content-center">
+		 <div>
+		 {% for AnnonceDesign in DesignPage %}
+							<div class="col">
+								<img src={{asset('./upload/'~ AnnonceDesign.media)}} class="d-block w-30" alt="...">
+							</div>
+         {% endfor %}
+		 </div>
+		{% do DesignPage.setPageRange(2) %}
+		{{knp_pagination_render(DesignPage,'pagination.html.twig')}}
 		</div>
-
 {% endblock %}

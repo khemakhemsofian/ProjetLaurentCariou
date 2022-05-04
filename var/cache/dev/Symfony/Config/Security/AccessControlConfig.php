@@ -8,7 +8,7 @@ use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 
 /**
- * This class is automatically generated to help creating config.
+ * This class is automatically generated to help in creating a config.
  */
 class AccessControlConfig 
 {
@@ -20,6 +20,7 @@ class AccessControlConfig
     private $methods;
     private $allowIf;
     private $roles;
+    private $_usedProperties = [];
     
     /**
      * @default null
@@ -28,6 +29,7 @@ class AccessControlConfig
      */
     public function requiresChannel($value): self
     {
+        $this->_usedProperties['requiresChannel'] = true;
         $this->requiresChannel = $value;
     
         return $this;
@@ -42,6 +44,7 @@ class AccessControlConfig
      */
     public function path($value): self
     {
+        $this->_usedProperties['path'] = true;
         $this->path = $value;
     
         return $this;
@@ -54,6 +57,7 @@ class AccessControlConfig
      */
     public function host($value): self
     {
+        $this->_usedProperties['host'] = true;
         $this->host = $value;
     
         return $this;
@@ -66,6 +70,7 @@ class AccessControlConfig
      */
     public function port($value): self
     {
+        $this->_usedProperties['port'] = true;
         $this->port = $value;
     
         return $this;
@@ -77,6 +82,7 @@ class AccessControlConfig
      */
     public function ips($value): self
     {
+        $this->_usedProperties['ips'] = true;
         $this->ips = $value;
     
         return $this;
@@ -88,6 +94,7 @@ class AccessControlConfig
      */
     public function methods($value): self
     {
+        $this->_usedProperties['methods'] = true;
         $this->methods = $value;
     
         return $this;
@@ -100,6 +107,7 @@ class AccessControlConfig
      */
     public function allowIf($value): self
     {
+        $this->_usedProperties['allowIf'] = true;
         $this->allowIf = $value;
     
         return $this;
@@ -111,6 +119,7 @@ class AccessControlConfig
      */
     public function roles($value): self
     {
+        $this->_usedProperties['roles'] = true;
         $this->roles = $value;
     
         return $this;
@@ -119,42 +128,50 @@ class AccessControlConfig
     public function __construct(array $value = [])
     {
     
-        if (isset($value['requires_channel'])) {
+        if (array_key_exists('requires_channel', $value)) {
+            $this->_usedProperties['requiresChannel'] = true;
             $this->requiresChannel = $value['requires_channel'];
             unset($value['requires_channel']);
         }
     
-        if (isset($value['path'])) {
+        if (array_key_exists('path', $value)) {
+            $this->_usedProperties['path'] = true;
             $this->path = $value['path'];
             unset($value['path']);
         }
     
-        if (isset($value['host'])) {
+        if (array_key_exists('host', $value)) {
+            $this->_usedProperties['host'] = true;
             $this->host = $value['host'];
             unset($value['host']);
         }
     
-        if (isset($value['port'])) {
+        if (array_key_exists('port', $value)) {
+            $this->_usedProperties['port'] = true;
             $this->port = $value['port'];
             unset($value['port']);
         }
     
-        if (isset($value['ips'])) {
+        if (array_key_exists('ips', $value)) {
+            $this->_usedProperties['ips'] = true;
             $this->ips = $value['ips'];
             unset($value['ips']);
         }
     
-        if (isset($value['methods'])) {
+        if (array_key_exists('methods', $value)) {
+            $this->_usedProperties['methods'] = true;
             $this->methods = $value['methods'];
             unset($value['methods']);
         }
     
-        if (isset($value['allow_if'])) {
+        if (array_key_exists('allow_if', $value)) {
+            $this->_usedProperties['allowIf'] = true;
             $this->allowIf = $value['allow_if'];
             unset($value['allow_if']);
         }
     
-        if (isset($value['roles'])) {
+        if (array_key_exists('roles', $value)) {
+            $this->_usedProperties['roles'] = true;
             $this->roles = $value['roles'];
             unset($value['roles']);
         }
@@ -167,28 +184,28 @@ class AccessControlConfig
     public function toArray(): array
     {
         $output = [];
-        if (null !== $this->requiresChannel) {
+        if (isset($this->_usedProperties['requiresChannel'])) {
             $output['requires_channel'] = $this->requiresChannel;
         }
-        if (null !== $this->path) {
+        if (isset($this->_usedProperties['path'])) {
             $output['path'] = $this->path;
         }
-        if (null !== $this->host) {
+        if (isset($this->_usedProperties['host'])) {
             $output['host'] = $this->host;
         }
-        if (null !== $this->port) {
+        if (isset($this->_usedProperties['port'])) {
             $output['port'] = $this->port;
         }
-        if (null !== $this->ips) {
+        if (isset($this->_usedProperties['ips'])) {
             $output['ips'] = $this->ips;
         }
-        if (null !== $this->methods) {
+        if (isset($this->_usedProperties['methods'])) {
             $output['methods'] = $this->methods;
         }
-        if (null !== $this->allowIf) {
+        if (isset($this->_usedProperties['allowIf'])) {
             $output['allow_if'] = $this->allowIf;
         }
-        if (null !== $this->roles) {
+        if (isset($this->_usedProperties['roles'])) {
             $output['roles'] = $this->roles;
         }
     

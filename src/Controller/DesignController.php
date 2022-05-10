@@ -22,7 +22,8 @@ class DesignController extends AbstractController
     #[Route('/design/{categorieName}', name: 'app_design')]
     public function index(ManagerRegistry $manager,PaginatorInterface $paginator,DesignRepository $designRepository,Request $request, $categorieName=null): Response
     {
-        $categorieName = $request->query->get('q');
+      
+        //$categorieName = $request->query->get('d');
         $data =  $designRepository->findByDesignCategorie($categorieName);
         $designPage = $paginator->paginate(
             $data,
@@ -30,13 +31,18 @@ class DesignController extends AbstractController
         );
        
        
-    
+    /*
+    -vers un champs de bdd pour les img en fond
+    -crée une méthode pour renvoyer les images en json(avec une json response)
+    -récupérer ces imformation avec JavaScript
+    -avec JavaScript crée le défilement d'image
+    codepen(doc)
+    */ 
       
        
         
         return $this->render('design/index.html.twig', [
             'DesignPage'=> $designPage,
-            
             'GraphismCategorieList' => $manager->getRepository(GraphismCategorie::class)->findAll(),
             'DesignCategorieList' => $manager->getRepository(DesignCategorie::class)->findAll(),
         ]);

@@ -11,7 +11,6 @@ return [
         '/about' => [[['_route' => 'app_about', '_controller' => 'App\\Controller\\AboutController::index'], null, null, null, false, false, null]],
         '/admin' => [[['_route' => 'admin', '_controller' => 'App\\Controller\\Admin\\DashboardController::index'], null, null, null, false, false, null]],
         '/contact' => [[['_route' => 'app_contact', '_controller' => 'App\\Controller\\ContactController::index'], null, null, null, false, false, null]],
-        '/graphism' => [[['_route' => 'app_graphism', '_controller' => 'App\\Controller\\GraphismController::index'], null, null, null, false, false, null]],
         '/' => [[['_route' => 'app_main', '_controller' => 'App\\Controller\\MainController::index'], null, null, null, false, false, null]],
         '/adminLaurent' => [[['_route' => 'app_admin', '_controller' => 'App\\Controller\\SecurityController::index'], null, null, null, false, false, null]],
         '/login' => [[['_route' => 'app_login', '_controller' => 'App\\Controller\\SecurityController::login'], null, null, null, false, false, null]],
@@ -25,32 +24,34 @@ return [
     [ // $regexpList
         0 => '{^(?'
                 .'|/design(?:/([^/]++))?(*:28)'
+                .'|/graphism(?:/([^/]++))?(*:58)'
                 .'|/_(?'
-                    .'|error/(\\d+)(?:\\.([^/]++))?(*:66)'
-                    .'|wdt/([^/]++)(*:85)'
+                    .'|error/(\\d+)(?:\\.([^/]++))?(*:96)'
+                    .'|wdt/([^/]++)(*:115)'
                     .'|profiler/([^/]++)(?'
                         .'|/(?'
-                            .'|search/results(*:130)'
-                            .'|router(*:144)'
+                            .'|search/results(*:161)'
+                            .'|router(*:175)'
                             .'|exception(?'
-                                .'|(*:164)'
-                                .'|\\.css(*:177)'
+                                .'|(*:195)'
+                                .'|\\.css(*:208)'
                             .')'
                         .')'
-                        .'|(*:187)'
+                        .'|(*:218)'
                     .')'
                 .')'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
         28 => [[['_route' => 'app_design', 'categorieName' => null, '_controller' => 'App\\Controller\\DesignController::index'], ['categorieName'], null, null, false, true, null]],
-        66 => [[['_route' => '_preview_error', '_controller' => 'error_controller::preview', '_format' => 'html'], ['code', '_format'], null, null, false, true, null]],
-        85 => [[['_route' => '_wdt', '_controller' => 'web_profiler.controller.profiler::toolbarAction'], ['token'], null, null, false, true, null]],
-        130 => [[['_route' => '_profiler_search_results', '_controller' => 'web_profiler.controller.profiler::searchResultsAction'], ['token'], null, null, false, false, null]],
-        144 => [[['_route' => '_profiler_router', '_controller' => 'web_profiler.controller.router::panelAction'], ['token'], null, null, false, false, null]],
-        164 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
-        177 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
-        187 => [
+        58 => [[['_route' => 'app_graphism', 'categorieName' => null, '_controller' => 'App\\Controller\\GraphismController::index'], ['categorieName'], null, null, false, true, null]],
+        96 => [[['_route' => '_preview_error', '_controller' => 'error_controller::preview', '_format' => 'html'], ['code', '_format'], null, null, false, true, null]],
+        115 => [[['_route' => '_wdt', '_controller' => 'web_profiler.controller.profiler::toolbarAction'], ['token'], null, null, false, true, null]],
+        161 => [[['_route' => '_profiler_search_results', '_controller' => 'web_profiler.controller.profiler::searchResultsAction'], ['token'], null, null, false, false, null]],
+        175 => [[['_route' => '_profiler_router', '_controller' => 'web_profiler.controller.router::panelAction'], ['token'], null, null, false, false, null]],
+        195 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
+        208 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
+        218 => [
             [['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

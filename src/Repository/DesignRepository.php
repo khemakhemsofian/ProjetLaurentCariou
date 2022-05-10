@@ -58,9 +58,7 @@ class DesignRepository extends ServiceEntityRepository
                 ->where('dc.categorieName= :val')
                 ->setParameter('val',$value);
             }
-            $qb->orderBy('d.id', 'DESC')
-            ->setFirstResult($value)
-            ->setMaxResults(4);
+            $qb->orderBy('d.id', 'DESC');
           return  $qb->getQuery()
             ->getResult()
         ;

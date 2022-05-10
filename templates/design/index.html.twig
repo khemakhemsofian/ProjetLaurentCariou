@@ -29,7 +29,10 @@
 							</div>
          {% endfor %}
 		 </div>
-		{% do DesignPage.setPageRange(2) %}
-		{{knp_pagination_render(DesignPage,'pagination.html.twig')}}
+		{#{% do DesignPage.setPageRange(2) %}#}
+		
+		<div class="navigation">
+		   {{knp_pagination_render(DesignPage,'pagination.html.twig')}}
+		</div>
 		</div>
 {% endblock %}

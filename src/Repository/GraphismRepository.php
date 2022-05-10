@@ -49,16 +49,19 @@ class GraphismRepository extends ServiceEntityRepository
       * @return Graphism[] Returns an array of Graphism objects
       */
     
-      public function findByGraphismId($value=0)
+      public function findByGraphismCatégorie($value)
       {
           
-          return $this->createQueryBuilder('g')
-              ->orderBy('g.id', 'DESC')
-              ->setFirstResult($value)
-              ->setMaxResults(4)
-              ->getQuery()
-              ->getResult()
-          ;
+        $qb= $this->createQueryBuilder('g');
+        if ($value) {
+            $qb->join('g.categorie', 'dc')
+            ->where('dc.categorieName= :val')
+            ->setParameter('val',$value);
+        }
+        $qb->orderBy('g.id', 'DESC');
+        return  $qb->getQuery()
+          ->getResult()
+      ;
       }
     
 

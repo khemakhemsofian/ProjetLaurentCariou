@@ -1,8 +1,3 @@
-.image{
-   /* background: url(../image/voiture1.jpg) no-repeat;*/
-   color: rgba(236, 5, 5, 0.742);
-   width: 100px;
-}
 .body{
-    color: aqua;
+    background-color: rgba(50, 49, 49, 0.5)
 }

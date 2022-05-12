@@ -19,10 +19,6 @@ class ContactCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            ImageField::new('image_contact')
-            ->setBasePath('upload/')
-            ->setUploadDir('public/upload/')
-            ->setUploadedFileNamePattern('[randomhash].[extension]'),
             TextField::new('titre'),
             TextEditorField::new('description'),
             TextField::new('lien_reseau'),

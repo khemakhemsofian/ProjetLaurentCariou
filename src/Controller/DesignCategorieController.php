@@ -13,17 +13,13 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class DesignCategorieController extends AbstractController
 {
    
-    public function index(ManagerRegistry $manager,Request $request, DesignCategorie $categorie=null): Response
+    public function index(ManagerRegistry $manager): Response
     {
-        dump($categorie);
-        die;
-        if ($request->get("id")>1) {
-            $index = (intval($request->get("id"))-1)*4;
-         } else {
-            $index = 0;
-         }
+        
+      
+     
         return $this->render('design/index.html.twig', [
-            //'DesignCategorieList' => $manager->getRepository(DesignCategorie::class)->find(),
+            'DesignCategorieList' => $manager->getRepository(DesignCategorie::class)->findAll(),
             'GraphismCategorieList' => $manager->getRepository(GraphismCategorie::class)->findAll(),
         ]);
     }

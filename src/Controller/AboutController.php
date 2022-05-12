@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\About;
 use App\Entity\DesignCategorie;
 use App\Entity\GraphismCategorie;
 use Doctrine\Persistence\ManagerRegistry;
@@ -15,6 +16,7 @@ class AboutController extends AbstractController
     public function index(ManagerRegistry $manager): Response
     {
         return $this->render('about/index.html.twig', [
+            'aboutPage'=>$manager->getRepository(About::class)->findAll(),
             'GraphismCategorieList' => $manager->getRepository(GraphismCategorie::class)->findAll(),
             'DesignCategorieList' => $manager->getRepository(DesignCategorie::class)->findAll(),
         ]);

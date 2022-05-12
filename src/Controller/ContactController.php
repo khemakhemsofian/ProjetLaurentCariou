@@ -16,7 +16,7 @@ class ContactController extends AbstractController
     public function index(ManagerRegistry $manager): Response
     {
         return $this->render('contact/index.html.twig', [
-            'contact' => $manager->getRepository(Contact::class)->findAll(),
+            'contactPage' => $manager->getRepository(Contact::class)->findAll(),
             'GraphismCategorieList' => $manager->getRepository(GraphismCategorie::class)->findAll(),
             'DesignCategorieList' => $manager->getRepository(DesignCategorie::class)->findAll(),
         ]);

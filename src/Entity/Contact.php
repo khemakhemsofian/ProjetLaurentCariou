@@ -13,9 +13,6 @@ class Contact
     #[ORM\Column(type: 'integer')]
     private $id;
 
-    #[ORM\Column(type: 'string', length: 255)]
-    private $image_contact;
-
     #[ORM\Column(type: 'string', length: 100)]
     private $titre;
 
@@ -33,18 +30,7 @@ class Contact
         return $this->id;
     }
 
-    public function getImageContact(): ?string
-    {
-        return $this->image_contact;
-    }
-
-    public function setImageContact(string $image_contact): self
-    {
-        $this->image_contact = $image_contact;
-
-        return $this;
-    }
-
+  
     public function getTitre(): ?string
     {
         return $this->titre;

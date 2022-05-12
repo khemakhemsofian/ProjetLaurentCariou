@@ -3,11 +3,12 @@
 {% block body %}
 <div class="row">
 <div class="col">
-<p>{{contact.description}}</p>
+<p>{{contactPage.description}}</p>
 </div>
 <div class="col">
-<h3>{{contact.titre}}</h3>
-<p>{{contact.mail}}</p>
+<h3>{{contactPage.titre}}</h3>
+<p>{{contactPage.mail}}</p>
+<a href={{contactPage.lien_reseau}}>{{contactPage.lien_reseau}}</a>
 </div>
 </div>
 {% endblock %}

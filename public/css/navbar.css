@@ -1,10 +1,13 @@
-.nav-link{
-    color:whitesmoke
+.container-fluid{
+    margin-top:25px;
+    
 }
-.nav-item{
-    margin-top:50px
+.navbar-collapse{
+    margin-right: 200px;
+}
+.navbar-toggler{
+    margin-right: 50px;
 }
 
-.acceuil{
-    margin-right:1000px
-}
+
+

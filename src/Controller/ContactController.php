@@ -17,6 +17,7 @@ class ContactController extends AbstractController
     {
         return $this->render('contact/index.html.twig', [
             'contactPage' => $manager->getRepository(Contact::class)->findAll(),
+            //'fondEcranList'=>$manager->getRepository(FondEcran::class)->findAll(),
             'GraphismCategorieList' => $manager->getRepository(GraphismCategorie::class)->findAll(),
             'DesignCategorieList' => $manager->getRepository(DesignCategorie::class)->findAll(),
         ]);

@@ -16,11 +16,11 @@ class Contact
     #[ORM\Column(type: 'string', length: 100)]
     private $titre;
 
-    #[ORM\Column(type: 'string', length: 255)]
+    #[ORM\Column(type: 'string', length: 10000)]
     private $description;
 
     #[ORM\Column(type: 'string', length: 150)]
-    private $lien_reseau;
+    private $lienreseau;
 
     #[ORM\Column(type: 'string', length: 100)]
     private $mail;
@@ -55,14 +55,13 @@ class Contact
         return $this;
     }
 
-    public function getLienReseau(): ?string
+    public function getLienReseau()
     {
-        return $this->lien_reseau;
+        return $this->lienreseau;
     }
-
-    public function setLienReseau(string $lien_reseau): self
+    public function setLienReseau($lienreseau): self
     {
-        $this->lien_reseau = $lien_reseau;
+        $this->lienreseau = $lienreseau;
 
         return $this;
     }
@@ -78,4 +77,10 @@ class Contact
 
         return $this;
     }
+
+   
+    
+
+  
+    
 }

@@ -11,6 +11,7 @@ return [
         '/about' => [[['_route' => 'app_about', '_controller' => 'App\\Controller\\AboutController::index'], null, null, null, false, false, null]],
         '/admin' => [[['_route' => 'admin', '_controller' => 'App\\Controller\\Admin\\DashboardController::index'], null, null, null, false, false, null]],
         '/contact' => [[['_route' => 'app_contact', '_controller' => 'App\\Controller\\ContactController::index'], null, null, null, false, false, null]],
+        '/fond/ecran' => [[['_route' => 'app_fond_ecran', '_controller' => 'App\\Controller\\FondEcranController::index'], null, null, null, false, false, null]],
         '/' => [[['_route' => 'app_main', '_controller' => 'App\\Controller\\MainController::index'], null, null, null, false, false, null]],
         '/adminLaurent' => [[['_route' => 'app_admin', '_controller' => 'App\\Controller\\SecurityController::index'], null, null, null, false, false, null]],
         '/login' => [[['_route' => 'app_login', '_controller' => 'App\\Controller\\SecurityController::login'], null, null, null, false, false, null]],

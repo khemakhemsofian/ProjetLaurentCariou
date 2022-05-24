@@ -43,6 +43,7 @@ class DesignController extends AbstractController
         
         return $this->render('design/index.html.twig', [
             'DesignPage'=> $designPage,
+            //'fondEcranList'=>$manager->getRepository(FondEcran::class)->findAll(),
             'GraphismCategorieList' => $manager->getRepository(GraphismCategorie::class)->findAll(),
             'DesignCategorieList' => $manager->getRepository(DesignCategorie::class)->findAll(),
         ]);

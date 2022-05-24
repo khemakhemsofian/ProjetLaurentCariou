@@ -15,8 +15,10 @@ class AboutController extends AbstractController
     #[Route('/about', name: 'app_about')]
     public function index(ManagerRegistry $manager): Response
     {
+      
         return $this->render('about/index.html.twig', [
             'aboutPage'=>$manager->getRepository(About::class)->findAll(),
+            //'fondEcranList'=>$manager->getRepository(FondEcran::class)->findAll(),
             'GraphismCategorieList' => $manager->getRepository(GraphismCategorie::class)->findAll(),
             'DesignCategorieList' => $manager->getRepository(DesignCategorie::class)->findAll(),
         ]);

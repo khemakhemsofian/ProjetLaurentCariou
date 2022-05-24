@@ -7,6 +7,7 @@ return [
     'admin' => [[], ['_controller' => 'App\\Controller\\Admin\\DashboardController::index'], [], [['text', '/admin']], [], [], []],
     'app_contact' => [[], ['_controller' => 'App\\Controller\\ContactController::index'], [], [['text', '/contact']], [], [], []],
     'app_design' => [['categorieName'], ['categorieName' => null, '_controller' => 'App\\Controller\\DesignController::index'], [], [['variable', '/', '[^/]++', 'categorieName', true], ['text', '/design']], [], [], []],
+    'app_fond_ecran' => [[], ['_controller' => 'App\\Controller\\FondEcranController::index'], [], [['text', '/fond/ecran']], [], [], []],
     'app_graphism' => [['categorieName'], ['categorieName' => null, '_controller' => 'App\\Controller\\GraphismController::index'], [], [['variable', '/', '[^/]++', 'categorieName', true], ['text', '/graphism']], [], [], []],
     'app_main' => [[], ['_controller' => 'App\\Controller\\MainController::index'], [], [['text', '/']], [], [], []],
     'app_admin' => [[], ['_controller' => 'App\\Controller\\SecurityController::index'], [], [['text', '/adminLaurent']], [], [], []],

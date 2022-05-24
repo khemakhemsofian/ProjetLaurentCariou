@@ -27,6 +27,7 @@ class GraphismController extends AbstractController
         );
         return $this->render('graphism/index.html.twig', [
             'GraphismPage'=> $graphismPage,
+            //'fondEcranList'=>$manager->getRepository(FondEcran::class)->findAll(),
             'GraphismCategorieList' => $manager->getRepository(GraphismCategorie::class)->findAll(),
             'DesignCategorieList' => $manager->getRepository(DesignCategorie::class)->findAll(),
         ]);

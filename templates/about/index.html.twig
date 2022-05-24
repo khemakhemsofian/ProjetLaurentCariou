@@ -1,10 +1,15 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+{% for annonceAbout in aboutPage %}
 <div class="row">
 <div class="col">
-<h3>{{aboutPage.image}}</h3>
-<p>{{aboutPage.description}}</p>
+<img  src={{asset('./upload/'~ annonceAbout.image)}} class="d-block" alt="...">
+</div>
+<div class="col">
+<p>{{annonceAbout.description}}</p>
 </div>
 </div>
+{% endfor %}
+
 {% endblock %}

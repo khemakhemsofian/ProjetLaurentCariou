@@ -10,6 +10,7 @@ use App\Entity\Graphism;
 use App\Entity\DesignCategorie;
 use App\Entity\GraphismCategorie;
 use App\Controller\Admin\AdminCrudController;
+use App\Entity\FondEcran;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
@@ -62,6 +63,7 @@ class DashboardController extends AbstractDashboardController
             yield MenuItem::linkToCrud('designCategorie', 'fas fa-list', DesignCategorie::class);
             yield MenuItem::linkToCrud('contact', 'fas fa-list', Contact::class);  
             yield MenuItem::linkToCrud('about me', 'fas fa-list', About::class);
+            yield MenuItem::linkToCrud('FondEcran', 'fas fa-list', FondEcran::class);
         }
         
     }

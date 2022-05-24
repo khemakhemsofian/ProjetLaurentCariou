@@ -21,7 +21,7 @@ class ContactCrudController extends AbstractCrudController
         return [
             TextField::new('titre'),
             TextEditorField::new('description'),
-            TextField::new('lien_reseau'),
+            TextField::new('lienreseau'),
             TextField::new('mail'),
 
         ];

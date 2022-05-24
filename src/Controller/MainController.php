@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\FondEcran;
 use App\Entity\DesignCategorie;
 use App\Entity\GraphismCategorie;
 use Doctrine\Persistence\ManagerRegistry;
@@ -17,6 +18,7 @@ class MainController extends AbstractController
     public function index(ManagerRegistry $manager): Response
     {
         return $this->render('main/index.html.twig', [
+           // 'fondEcranList'=>$manager->getRepository(FondEcran::class)->findAll(),
             'DesignCategorieList' => $manager->getRepository(DesignCategorie::class)->findAll(),
             'GraphismCategorieList' => $manager->getRepository(GraphismCategorie::class)->findAll(),
         ]);

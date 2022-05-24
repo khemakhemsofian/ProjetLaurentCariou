@@ -424,6 +424,14 @@
         <argument type="service" id=".service_locator.SoiLYDQ.App\Controller\Admin\DesignCrudController"/>
       </call>
     </service>
+    <service id="App\Controller\Admin\FondEcranCrudController" class="App\Controller\Admin\FondEcranCrudController" public="true" autowire="true" autoconfigure="true">
+      <tag name="ea.crud_controller"/>
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.SoiLYDQ.App\Controller\Admin\FondEcranCrudController"/>
+      </call>
+    </service>
     <service id="App\Controller\Admin\GraphismCategorieCrudController" class="App\Controller\Admin\GraphismCategorieCrudController" public="true" autowire="true" autoconfigure="true">
       <tag name="ea.crud_controller"/>
       <tag name="controller.service_arguments"/>
@@ -459,6 +467,13 @@
       <tag name="container.service_subscriber"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.GNc8e5B.App\Controller\DesignController"/>
+      </call>
+    </service>
+    <service id="App\Controller\FondEcranController" class="App\Controller\FondEcranController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.GNc8e5B.App\Controller\FondEcranController"/>
       </call>
     </service>
     <service id="App\Controller\GraphismCategorieController" class="App\Controller\GraphismCategorieController" public="true" autowire="true" autoconfigure="true">
@@ -7048,6 +7063,10 @@
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\DesignCrudController" class="App\Controller\Admin\DesignCrudController" autowire="true" abstract="true"/>
     <service id=".instanceof.EasyCorp\Bundle\EasyAdminBundle\Contracts\Controller\CrudControllerInterface.0.App\Controller\Admin\DesignCrudController" class="App\Controller\Admin\DesignCrudController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\Admin\DesignCrudController" class="App\Controller\Admin\DesignCrudController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Admin\FondEcranCrudController" class="App\Controller\Admin\FondEcranCrudController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\FondEcranCrudController" class="App\Controller\Admin\FondEcranCrudController" autowire="true" abstract="true"/>
+    <service id=".instanceof.EasyCorp\Bundle\EasyAdminBundle\Contracts\Controller\CrudControllerInterface.0.App\Controller\Admin\FondEcranCrudController" class="App\Controller\Admin\FondEcranCrudController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Admin\FondEcranCrudController" class="App\Controller\Admin\FondEcranCrudController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Admin\GraphismCategorieCrudController" class="App\Controller\Admin\GraphismCategorieCrudController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\GraphismCategorieCrudController" class="App\Controller\Admin\GraphismCategorieCrudController" autowire="true" abstract="true"/>
     <service id=".instanceof.EasyCorp\Bundle\EasyAdminBundle\Contracts\Controller\CrudControllerInterface.0.App\Controller\Admin\GraphismCategorieCrudController" class="App\Controller\Admin\GraphismCategorieCrudController" autowire="true" abstract="true"/>
@@ -7065,6 +7084,9 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\DesignController" class="App\Controller\DesignController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\DesignController" class="App\Controller\DesignController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\DesignController" class="App\Controller\DesignController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\FondEcranController" class="App\Controller\FondEcranController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\FondEcranController" class="App\Controller\FondEcranController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\FondEcranController" class="App\Controller\FondEcranController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\GraphismCategorieController" class="App\Controller\GraphismCategorieController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\GraphismCategorieController" class="App\Controller\GraphismCategorieController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\GraphismCategorieController" class="App\Controller\GraphismCategorieController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -7580,7 +7602,7 @@
         <argument key="authenticationUtils" type="service_closure" id="security.authentication_utils"/>
       </argument>
     </service>
-    <service id=".service_locator.vRMqgW3" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.77KUDDg" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\AboutController::index" type="service_closure" id=".service_locator.px2rAP."/>
@@ -7690,6 +7712,27 @@
         <argument key="App\Controller\Admin\DesignCrudController::persistEntity" type="service_closure" id=".service_locator.l2QwsaZ"/>
         <argument key="App\Controller\Admin\DesignCrudController::renderFilters" type="service_closure" id=".service_locator.ZOQ9v2d"/>
         <argument key="App\Controller\Admin\DesignCrudController::updateEntity" type="service_closure" id=".service_locator.l2QwsaZ"/>
+        <argument key="App\Controller\Admin\FondEcranCrudController::autocomplete" type="service_closure" id=".service_locator.ZOQ9v2d"/>
+        <argument key="App\Controller\Admin\FondEcranCrudController::batchDelete" type="service_closure" id=".service_locator.Olybskb"/>
+        <argument key="App\Controller\Admin\FondEcranCrudController::configureActions" type="service_closure" id=".service_locator.CKlWSja"/>
+        <argument key="App\Controller\Admin\FondEcranCrudController::configureAssets" type="service_closure" id=".service_locator.U4Bbnsn"/>
+        <argument key="App\Controller\Admin\FondEcranCrudController::configureCrud" type="service_closure" id=".service_locator.4C0Bh8j"/>
+        <argument key="App\Controller\Admin\FondEcranCrudController::configureFilters" type="service_closure" id=".service_locator.Nt.ogDb"/>
+        <argument key="App\Controller\Admin\FondEcranCrudController::configureResponseParameters" type="service_closure" id=".service_locator.2dc0eaX"/>
+        <argument key="App\Controller\Admin\FondEcranCrudController::createEditForm" type="service_closure" id=".service_locator.bgO__Zr"/>
+        <argument key="App\Controller\Admin\FondEcranCrudController::createEditFormBuilder" type="service_closure" id=".service_locator.bgO__Zr"/>
+        <argument key="App\Controller\Admin\FondEcranCrudController::createIndexQueryBuilder" type="service_closure" id=".service_locator.3on9uHL"/>
+        <argument key="App\Controller\Admin\FondEcranCrudController::createNewForm" type="service_closure" id=".service_locator.bgO__Zr"/>
+        <argument key="App\Controller\Admin\FondEcranCrudController::createNewFormBuilder" type="service_closure" id=".service_locator.bgO__Zr"/>
+        <argument key="App\Controller\Admin\FondEcranCrudController::delete" type="service_closure" id=".service_locator.ZOQ9v2d"/>
+        <argument key="App\Controller\Admin\FondEcranCrudController::deleteEntity" type="service_closure" id=".service_locator.l2QwsaZ"/>
+        <argument key="App\Controller\Admin\FondEcranCrudController::detail" type="service_closure" id=".service_locator.ZOQ9v2d"/>
+        <argument key="App\Controller\Admin\FondEcranCrudController::edit" type="service_closure" id=".service_locator.ZOQ9v2d"/>
+        <argument key="App\Controller\Admin\FondEcranCrudController::index" type="service_closure" id=".service_locator.ZOQ9v2d"/>
+        <argument key="App\Controller\Admin\FondEcranCrudController::new" type="service_closure" id=".service_locator.ZOQ9v2d"/>
+        <argument key="App\Controller\Admin\FondEcranCrudController::persistEntity" type="service_closure" id=".service_locator.l2QwsaZ"/>
+        <argument key="App\Controller\Admin\FondEcranCrudController::renderFilters" type="service_closure" id=".service_locator.ZOQ9v2d"/>
+        <argument key="App\Controller\Admin\FondEcranCrudController::updateEntity" type="service_closure" id=".service_locator.l2QwsaZ"/>
         <argument key="App\Controller\Admin\GraphismCategorieCrudController::autocomplete" type="service_closure" id=".service_locator.ZOQ9v2d"/>
         <argument key="App\Controller\Admin\GraphismCategorieCrudController::batchDelete" type="service_closure" id=".service_locator.Olybskb"/>
         <argument key="App\Controller\Admin\GraphismCategorieCrudController::configureActions" type="service_closure" id=".service_locator.CKlWSja"/>
@@ -7735,6 +7778,7 @@
         <argument key="App\Controller\ContactController::index" type="service_closure" id=".service_locator.px2rAP."/>
         <argument key="App\Controller\DesignCategorieController::index" type="service_closure" id=".service_locator.px2rAP."/>
         <argument key="App\Controller\DesignController::index" type="service_closure" id=".service_locator.9ZfbafG"/>
+        <argument key="App\Controller\FondEcranController::index" type="service_closure" id=".service_locator.px2rAP."/>
         <argument key="App\Controller\GraphismCategorieController::index" type="service_closure" id=".service_locator.px2rAP."/>
         <argument key="App\Controller\GraphismController::index" type="service_closure" id=".service_locator.Yyg9vFp"/>
         <argument key="App\Controller\MainController::index" type="service_closure" id=".service_locator.px2rAP."/>
@@ -7852,6 +7896,27 @@
         <argument key="App\Controller\Admin\DesignCrudController:persistEntity" type="service_closure" id=".service_locator.l2QwsaZ"/>
         <argument key="App\Controller\Admin\DesignCrudController:renderFilters" type="service_closure" id=".service_locator.ZOQ9v2d"/>
         <argument key="App\Controller\Admin\DesignCrudController:updateEntity" type="service_closure" id=".service_locator.l2QwsaZ"/>
+        <argument key="App\Controller\Admin\FondEcranCrudController:autocomplete" type="service_closure" id=".service_locator.ZOQ9v2d"/>
+        <argument key="App\Controller\Admin\FondEcranCrudController:batchDelete" type="service_closure" id=".service_locator.Olybskb"/>
+        <argument key="App\Controller\Admin\FondEcranCrudController:configureActions" type="service_closure" id=".service_locator.CKlWSja"/>
+        <argument key="App\Controller\Admin\FondEcranCrudController:configureAssets" type="service_closure" id=".service_locator.U4Bbnsn"/>
+        <argument key="App\Controller\Admin\FondEcranCrudController:configureCrud" type="service_closure" id=".service_locator.4C0Bh8j"/>
+        <argument key="App\Controller\Admin\FondEcranCrudController:configureFilters" type="service_closure" id=".service_locator.Nt.ogDb"/>
+        <argument key="App\Controller\Admin\FondEcranCrudController:configureResponseParameters" type="service_closure" id=".service_locator.2dc0eaX"/>
+        <argument key="App\Controller\Admin\FondEcranCrudController:createEditForm" type="service_closure" id=".service_locator.bgO__Zr"/>
+        <argument key="App\Controller\Admin\FondEcranCrudController:createEditFormBuilder" type="service_closure" id=".service_locator.bgO__Zr"/>
+        <argument key="App\Controller\Admin\FondEcranCrudController:createIndexQueryBuilder" type="service_closure" id=".service_locator.3on9uHL"/>
+        <argument key="App\Controller\Admin\FondEcranCrudController:createNewForm" type="service_closure" id=".service_locator.bgO__Zr"/>
+        <argument key="App\Controller\Admin\FondEcranCrudController:createNewFormBuilder" type="service_closure" id=".service_locator.bgO__Zr"/>
+        <argument key="App\Controller\Admin\FondEcranCrudController:delete" type="service_closure" id=".service_locator.ZOQ9v2d"/>
+        <argument key="App\Controller\Admin\FondEcranCrudController:deleteEntity" type="service_closure" id=".service_locator.l2QwsaZ"/>
+        <argument key="App\Controller\Admin\FondEcranCrudController:detail" type="service_closure" id=".service_locator.ZOQ9v2d"/>
+        <argument key="App\Controller\Admin\FondEcranCrudController:edit" type="service_closure" id=".service_locator.ZOQ9v2d"/>
+        <argument key="App\Controller\Admin\FondEcranCrudController:index" type="service_closure" id=".service_locator.ZOQ9v2d"/>
+        <argument key="App\Controller\Admin\FondEcranCrudController:new" type="service_closure" id=".service_locator.ZOQ9v2d"/>
+        <argument key="App\Controller\Admin\FondEcranCrudController:persistEntity" type="service_closure" id=".service_locator.l2QwsaZ"/>
+        <argument key="App\Controller\Admin\FondEcranCrudController:renderFilters" type="service_closure" id=".service_locator.ZOQ9v2d"/>
+        <argument key="App\Controller\Admin\FondEcranCrudController:updateEntity" type="service_closure" id=".service_locator.l2QwsaZ"/>
         <argument key="App\Controller\Admin\GraphismCategorieCrudController:autocomplete" type="service_closure" id=".service_locator.ZOQ9v2d"/>
         <argument key="App\Controller\Admin\GraphismCategorieCrudController:batchDelete" type="service_closure" id=".service_locator.Olybskb"/>
         <argument key="App\Controller\Admin\GraphismCategorieCrudController:configureActions" type="service_closure" id=".service_locator.CKlWSja"/>
@@ -7897,6 +7962,7 @@
         <argument key="App\Controller\ContactController:index" type="service_closure" id=".service_locator.px2rAP."/>
         <argument key="App\Controller\DesignCategorieController:index" type="service_closure" id=".service_locator.px2rAP."/>
         <argument key="App\Controller\DesignController:index" type="service_closure" id=".service_locator.9ZfbafG"/>
+        <argument key="App\Controller\FondEcranController:index" type="service_closure" id=".service_locator.px2rAP."/>
         <argument key="App\Controller\GraphismCategorieController:index" type="service_closure" id=".service_locator.px2rAP."/>
         <argument key="App\Controller\GraphismController:index" type="service_closure" id=".service_locator.Yyg9vFp"/>
         <argument key="App\Controller\MainController:index" type="service_closure" id=".service_locator.px2rAP."/>
@@ -8322,6 +8388,7 @@
         <argument>App\Controller\Admin\ContactCrudController</argument>
         <argument>App\Controller\Admin\DesignCategorieCrudController</argument>
         <argument>App\Controller\Admin\DesignCrudController</argument>
+        <argument>App\Controller\Admin\FondEcranCrudController</argument>
         <argument>App\Controller\Admin\GraphismCategorieCrudController</argument>
         <argument>App\Controller\Admin\GraphismCrudController</argument>
       </argument>
@@ -8454,6 +8521,12 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.SoiLYDQ" method="withContext"/>
     </service>
+    <service id=".service_locator.SoiLYDQ.App\Controller\Admin\FondEcranCrudController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\FondEcranCrudController"/>
+      <argument>App\Controller\Admin\FondEcranCrudController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.SoiLYDQ" method="withContext"/>
+    </service>
     <service id=".service_locator.SoiLYDQ.App\Controller\Admin\GraphismCategorieCrudController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\Admin\GraphismCategorieCrudController"/>
       <argument>App\Controller\Admin\GraphismCategorieCrudController</argument>
@@ -8481,6 +8554,12 @@
     <service id=".service_locator.GNc8e5B.App\Controller\DesignController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\DesignController"/>
       <argument>App\Controller\DesignController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.GNc8e5B" method="withContext"/>
+    </service>
+    <service id=".service_locator.GNc8e5B.App\Controller\FondEcranController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\FondEcranController"/>
+      <argument>App\Controller\FondEcranController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.GNc8e5B" method="withContext"/>
     </service>
@@ -8692,12 +8771,12 @@
       <argument type="service" id="EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.vRMqgW3"/>
+      <argument type="service" id=".service_locator.77KUDDg"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.vRMqgW3"/>
+      <argument type="service" id=".service_locator.77KUDDg"/>
     </service>
     <service id="debug.traced.messenger.bus.default.inner" class="Symfony\Component\Messenger\MessageBus">
       <argument type="iterator">
@@ -9705,7 +9784,7 @@
     <service id="Knp\Component\Pager\PaginatorInterface" alias="knp_paginator"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.gSv9zYw" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.vRMqgW3"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.77KUDDg"/>
     <service id="session" alias=".session.do-not-use" public="true">
       <deprecated package="symfony/framework-bundle" version="5.3">The "%alias_id%" service and "SessionInterface" alias are deprecated, use "$requestStack-&gt;getSession()" instead.</deprecated>
     </service>
@@ -9736,7 +9815,7 @@
     <service id=".service_locator.tbo4Jjv" alias=".service_locator.bgO__Zr"/>
     <service id=".service_locator.pJl837U" alias=".service_locator.9ZfbafG"/>
     <service id=".service_locator.uMNhrn6" alias=".service_locator.Yyg9vFp"/>
-    <service id=".service_locator.Xt6TZLf" alias=".service_locator.vRMqgW3"/>
+    <service id=".service_locator...QoRQo" alias=".service_locator.77KUDDg"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.19_mNxd"/>
     <service id=".service_locator.3l1LkXo" alias=".service_locator.ZWFYuib"/>
     <service id=".service_locator.nk0lT0X" alias=".service_locator.1kmbKC8"/>

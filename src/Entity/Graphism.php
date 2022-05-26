@@ -18,7 +18,7 @@ class Graphism
     #[ORM\Column(type: 'string', length: 100)]
     private $title;
 
-    #[ORM\Column(type: 'string', length: 255)]
+    #[ORM\Column(type: 'string', length: 10000)]
     private $description;
 
     #[ORM\Column(type: 'string', length: 255)]

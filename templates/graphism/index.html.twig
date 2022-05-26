@@ -1,17 +1,16 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-
-		<div class="d-flex justify-content-center">
-		 <div>
+	
+		<div id="tous-les-graphism">
 		  {% for AnonnceGraphism in GraphismPage %}
-							<div class="col">
-								<img  src={{asset('./upload/'~ AnonnceGraphism.media)}} class="d-block w-30" alt="...">
+						<div class="images-des-graphism"  id="carre{{loop.index}}">
+								<img  src={{asset('./upload/'~ AnonnceGraphism.media)}}  alt="...">
 							</div>
           {% endfor %}
-		 </div>
+		  </div>
 		<div class="navigation">
 		   {{knp_pagination_render(GraphismPage,'pagination.html.twig')}}
 		</div>
-		</div>
+		
 {% endblock %}

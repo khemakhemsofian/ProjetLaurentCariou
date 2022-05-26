@@ -1,0 +1,33 @@
+body{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+.contact-page {
+   
+    margin-top: 25px;
+    font-size: 1.5rem;
+    color: whitesmoke;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+}
+
+.lien-reseau-contact {
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+.logo-contact {
+    width: 100px;
+    height: 100px;
+}
+
+/*responsive*/
+
+@media screen and (max-width: 425px) {
+    .contact-page{
+        font-size:1.8rem;
+    }
+}

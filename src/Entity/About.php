@@ -16,7 +16,7 @@ class About
     #[ORM\Column(type: 'string', length: 255)]
     private $image;
 
-    #[ORM\Column(type: 'string', length: 255)]
+    #[ORM\Column(type: 'string', length: 10000)]
     private $description;
 
     public function getId(): ?int

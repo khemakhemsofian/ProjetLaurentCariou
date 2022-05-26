@@ -1,0 +1,31 @@
+.about-page {
+   
+    margin-top: 25px;
+    font-size: 1.5rem;
+    color: whitesmoke;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+}
+
+.logo-about {
+    width: 200px;
+    height: 200px;
+}
+.titre-about{
+    color: whitesmoke;
+}
+
+.text-about{
+    text-decoration: none;
+    color: whitesmoke;
+    font-size: 1rem;
+}
+/*responsive*/
+
+@media screen and (max-width: 425px) {
+    .contact-page{
+        font-size:1.8rem;
+    }
+}

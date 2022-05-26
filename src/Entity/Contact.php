@@ -25,6 +25,9 @@ class Contact
     #[ORM\Column(type: 'string', length: 100)]
     private $mail;
 
+    #[ORM\Column(type: 'string', length: 255)]
+    private $logo;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -74,6 +77,18 @@ class Contact
     public function setMail(string $mail): self
     {
         $this->mail = $mail;
+
+        return $this;
+    }
+
+    public function getLogo(): ?string
+    {
+        return $this->logo;
+    }
+
+    public function setLogo(string $logo): self
+    {
+        $this->logo = $logo;
 
         return $this;
     }

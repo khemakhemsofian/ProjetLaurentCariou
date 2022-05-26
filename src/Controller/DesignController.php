@@ -29,24 +29,14 @@ class DesignController extends AbstractController
             $data,
             $request->query->getInt('page',1),4
         );
+  
        
-       
-    /*
-    -vers un champs de bdd pour les img en fond
-    -crée une méthode pour renvoyer les images en json(avec une json response)
-    -récupérer ces imformation avec JavaScript
-    -avec JavaScript crée le défilement d'image
-    codepen(doc)
-    */ 
-      
-       
-        
         return $this->render('design/index.html.twig', [
             'DesignPage'=> $designPage,
             //'fondEcranList'=>$manager->getRepository(FondEcran::class)->findAll(),
             'GraphismCategorieList' => $manager->getRepository(GraphismCategorie::class)->findAll(),
             'DesignCategorieList' => $manager->getRepository(DesignCategorie::class)->findAll(),
         ]);
+       
     }
-  
 }

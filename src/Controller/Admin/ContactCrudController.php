@@ -23,6 +23,12 @@ class ContactCrudController extends AbstractCrudController
             TextEditorField::new('description'),
             TextField::new('lienreseau'),
             TextField::new('mail'),
+            ImageField:: new('logo')
+            ->setBasePath('upload/')
+            ->setUploadDir('public/upload/')
+            ->setUploadedFileNamePattern('[randomhash].[extension]'),
+
+
 
         ];
     }

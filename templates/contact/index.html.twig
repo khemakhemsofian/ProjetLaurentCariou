@@ -1,20 +1,19 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-	{% for annonceContact in contactPage %}
-		<div class="d-flex flex-column justify-content-evenly flex-sm-row contact-page ">
-			<div >
+{% for annonceContact in contactPage %}
+	<div class="container contact-page">
+			<div class="col-3 ">
 				<h3>{{annonceContact.titre}}</h3>
 			</div>
-			<div class="col-4">
+			<div class="col-6  ">
 				<p>{{annonceContact.description|format_file_from_text}}</p>
 			</div>
-			<div>
+			<div class="col-3 ">
+				<a class="lien-reseau-contact" href={{annonceContact.lienreseau}}>Lien d'un réseau</a>
 				<p>{{annonceContact.mail}}</p>
-				<a href={{annonceContact.lienreseau}}>Lien d'un réseau</a>
+				<img class="logo-contact" src={{asset('./upload/'~ annonceContact.logo)}} alt="...">
 			</div>
-		</div>
-
-	{% endfor %}
-
+	</div>
+</div>{% endfor %}
 {% endblock %}

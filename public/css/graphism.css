@@ -1,0 +1,42 @@
+#tous-les-graphism {
+    
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px 10px;
+    grid-template-columns: auto 18rem 18rem auto;
+    grid-template-areas: ". carre1 carre2 ."
+        ". carre3  carre4 .";
+}
+
+#carre1 {
+    grid-area: carre1;
+
+}
+
+#carre2 {
+    grid-area: carre2;
+
+}
+
+#carre3 {
+    grid-area: carre3;
+
+}
+
+#carre4 {
+    grid-area: carre4;
+
+}
+
+.images-des-graphism>img {
+    width: 280px;
+    height: 280px;
+}
+
+.navigation {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 20px;
+
+}

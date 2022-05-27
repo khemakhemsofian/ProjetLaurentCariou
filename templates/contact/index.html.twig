@@ -3,16 +3,18 @@
 {% block body %}
 {% for annonceContact in contactPage %}
 	<div class="container contact-page">
-			<div class="col-3 ">
-				<h3>{{annonceContact.titre}}</h3>
+		<div class="row justify-content-center">
+			<div class="col-md-3 col-lg-3 col-xs-12 col-sm-12 ">
+				<h3 class=" titre-contact">{{annonceContact.titre}}</h3>
 			</div>
-			<div class="col-6  ">
+			<div class="col-md-6 col-lg-6 col-xs-12 col-sm-12 text-contact">
 				<p>{{annonceContact.description|format_file_from_text}}</p>
 			</div>
-			<div class="col-3 ">
+			<div class="col-md-3 col-lg-3 col-xs-12 col-sm-12 ">
 				<a class="lien-reseau-contact" href={{annonceContact.lienreseau}}>Lien d'un réseau</a>
 				<p>{{annonceContact.mail}}</p>
 				<img class="logo-contact" src={{asset('./upload/'~ annonceContact.logo)}} alt="...">
+			</div>
 			</div>
 	</div>
 </div>{% endfor %}

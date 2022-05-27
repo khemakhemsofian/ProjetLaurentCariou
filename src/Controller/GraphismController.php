@@ -32,4 +32,19 @@ class GraphismController extends AbstractController
             'DesignCategorieList' => $manager->getRepository(DesignCategorie::class)->findAll(),
         ]);
     }
+    #[Route('/graphism/single/{id}', name: 'graphism_single', requirements: ['id' => '\d+'])]
+    public function single(int $id, ManagerRegistry $manager): Response
+    {
+        $graphism = $manager->getRepository(Graphism::class)->find($id);
+
+       
+
+        return $this->render("graphism/single.html.twig", [
+            'graphism' => $graphism,
+            'GraphismCategorieList' => $manager->getRepository(GraphismCategorie::class)->findAll(),
+            'DesignCategorieList' => $manager->getRepository(DesignCategorie::class)->findAll(),
+
+
+        ]);
+    }
 }

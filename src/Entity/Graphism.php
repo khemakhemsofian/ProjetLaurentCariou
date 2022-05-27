@@ -27,6 +27,9 @@ class Graphism
     #[ORM\ManyToOne(targetEntity: GraphismCategorie::class, inversedBy: 'graphisms')]
     private $categorie;
 
+    #[ORM\Column(type: 'string', length: 255)]
+    private $media2;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -82,6 +85,18 @@ class Graphism
     public function setCategorie(?GraphismCategorie $categorie): self
     {
         $this->categorie = $categorie;
+
+        return $this;
+    }
+
+    public function getMedia2(): ?string
+    {
+        return $this->media2;
+    }
+
+    public function setMedia2(string $media2): self
+    {
+        $this->media2 = $media2;
 
         return $this;
     }

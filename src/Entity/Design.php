@@ -29,6 +29,9 @@ class Design
     #[ORM\ManyToOne(targetEntity: DesignCategorie::class, inversedBy: 'designs')]
     private $categorie;
 
+    #[ORM\Column(type: 'string', length: 255)]
+    private $media2;
+
 
     public function getId(): ?int
     {
@@ -85,6 +88,18 @@ class Design
     public function setCategorie(?DesignCategorie $categorie): self
     {
         $this->categorie = $categorie;
+
+        return $this;
+    }
+
+    public function getMedia2(): ?string
+    {
+        return $this->media2;
+    }
+
+    public function setMedia2(string $media2): self
+    {
+        $this->media2 = $media2;
 
         return $this;
     }

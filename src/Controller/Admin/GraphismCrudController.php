@@ -31,6 +31,10 @@ class GraphismCrudController extends AbstractCrudController
             ->setBasePath('upload/')
             ->setUploadDir('public/upload/')
             ->setUploadedFileNamePattern('[randomhash].[extension]'),
+            ImageField:: new('media2')
+            ->setBasePath('upload/')
+            ->setUploadDir('public/upload/')
+            ->setUploadedFileNamePattern('[randomhash].[extension]'),
             AssociationField::new('categorie'),
         ];
     }

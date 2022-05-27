@@ -1,0 +1,19 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-md-4 col-lg-4 col-xs-12 col-sm-12  description-images2">
+				<h3>{{graphism.title}}</h3>
+				<p>{{graphism.description|format_file_from_text}}</p>
+			</div>
+			<div class="col-md-4 col-lg-4 col-xs-12 col-sm-12 images-media2">
+				<img src={{asset('./upload/'~ graphism.media)}} class="une-image2" alt="...">
+				<img src={{asset('./upload/'~ graphism.media2)}} alt="...">
+			</div>
+		</div>
+	</div>
+
+
+{% endblock %}

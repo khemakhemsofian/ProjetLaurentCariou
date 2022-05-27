@@ -28,7 +28,7 @@
 
 }
 
-.images-des-graphism>img {
+.images-des-graphism>a>img {
     width: 280px;
     height: 280px;
 }
@@ -39,4 +39,18 @@
     justify-content: center;
     margin-top: 20px;
 
+}
+
+/* css pour la partie single de graphism */
+
+.description-images2{
+    color:whitesmoke;
+}
+.images-media2>img{
+    width: 500px;
+    height: 280px;
+    margin-right: 50px;
+}
+.une-image2{
+    margin-bottom: 20px;
 }

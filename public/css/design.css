@@ -1,4 +1,4 @@
-#tous-les-designs {
+.tous-les-designs {
     
     display: grid;
     grid-template-rows: 1fr 1fr;
@@ -28,7 +28,7 @@
 
 }
 
-.images-des-designs>img {
+.images-des-designs>a>img {
     width: 280px;
     height: 280px;
 }
@@ -39,4 +39,18 @@
     justify-content: center;
     margin-top: 20px;
 
+}
+
+/* css pour la partie single de design */
+
+.description-images{
+    color:whitesmoke;
+}
+.images-media>img{
+    width: 500px;
+    height: 280px;
+    margin-right: 50px;
+}
+.une-image{
+    margin-bottom: 20px;
 }

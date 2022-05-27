@@ -1,10 +1,10 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-	<div id="tous-les-designs">
+	<div class="tous-les-designs">
 		{% for AnnonceDesign in DesignPage %}
 			<div class="images-des-designs"  id="carre{{loop.index}}">
-				<img src={{asset('./upload/'~ AnnonceDesign.media)}} alt="...">
+				<a href={{path('design_single', {id:AnnonceDesign.id})}}><img src={{asset('./upload/'~ AnnonceDesign.media)}} alt="..."></a>
 			</div>
 		{% endfor %}
 		{#{% do DesignPage.setPageRange(2) %}#}

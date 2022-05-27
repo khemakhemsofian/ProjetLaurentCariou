@@ -8,10 +8,14 @@ body{
     margin-top: 25px;
     font-size: 1.5rem;
     color: whitesmoke;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-
+}
+.titre-contact{
+   /* margin-top: 300px;*/
+    /*margin-left: 150px;*/
+    font-size: 3rem;
+}
+.text-contact{
+    font-size: medium;
 }
 
 .lien-reseau-contact {
@@ -24,10 +28,3 @@ body{
     height: 100px;
 }
 
-/*responsive*/
-
-@media screen and (max-width: 425px) {
-    .contact-page{
-        font-size:1.8rem;
-    }
-}

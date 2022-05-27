@@ -3,9 +3,9 @@
 {% block body %}
 	
 		<div id="tous-les-graphism">
-		  {% for AnonnceGraphism in GraphismPage %}
+		  {% for AnnonceGraphism in GraphismPage %}
 						<div class="images-des-graphism"  id="carre{{loop.index}}">
-								<img  src={{asset('./upload/'~ AnonnceGraphism.media)}}  alt="...">
+									<a href={{path('graphism_single', {id:AnnonceGraphism.id})}}><img  src={{asset('./upload/'~ AnnonceGraphism.media)}}  alt="..."></a>
 							</div>
           {% endfor %}
 		  </div>

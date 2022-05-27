@@ -2,9 +2,18 @@
 
 {% block body %}
 
-<div>
-<h3>Ceci</h3>
-<p>Est un test</p>
-<p>le single fonctionne</p>
-</div>
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-md-4 col-lg-4 col-xs-12 col-sm-12  description-images">
+				<h3>{{design.title}}</h3>
+				<p>{{design.description|format_file_from_text}}</p>
+			</div>
+			<div class="col-md-4 col-lg-4 col-xs-12 col-sm-12 images-media">
+				<img src={{asset('./upload/'~ design.media)}} class="une-image" alt="...">
+				<img src={{asset('./upload/'~ design.media2)}} alt="...">
+			</div>
+		</div>
+	</div>
+
+
 {% endblock %}
